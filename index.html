@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiParajes Sedes ESRN Rural Virtual</title>
+   
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Un fondo más claro para mejor contraste */
+            line-height: 1.6;
+        }
+    
+        header {
+            background-color: #004b87; /* Color más oscuro para mejor contraste */
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #0056b3;
+            animation: fadeIn 1s;
+        }
+    
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    
+        nav {
+            background-color: #0056b3;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background 0.3s, transform 0.3s;
+        }
+    
+        nav a:hover {
+            background: #003366; /* Color más oscuro al pasar el ratón */
+            transform: scale(1.1);
+        }
+    
+        .content {
+            padding: 20px;
+            background-color: white;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moving-image {
+            max-width: 100%; /* Asegúrate de que la imagen se ajuste al contenedor */
+            height: auto;
+            margin: 20px 0; /* Espaciado alrededor de las imágenes */
+        }
+
+        /* Efectos para los divs de los parajes */
+        .paraje {
+            transition: transform 0.3s ease, color 0.3s ease; /* Efecto de transición */
+            color: #333; /* Color de texto por defecto */
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            background-color: #ffffff; /* Fondo blanco para contraste */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .paraje:hover {
+            transform: translateY(-5px); /* Levantar el div al pasar el mouse */
+            color: #004b87; /* Cambiar color al pasar el mouse */
+            background-color: #f0f8ff; /* Color de fondo más claro al pasar el mouse */
+        }
+        header {
+    font-family: 'Georgia', serif; /* Cambia 'Georgia' por la fuente que prefieras */
+    font-size: 1.2em; /* Ajusta el tamaño según lo necesites */
+    text-align: center; /* Centra el texto */
+    color: white; /* Cambia el color si es necesario */
+}
+
+header h1 {
+    font-size: 2.5em; /* Tamaño específico para el título */
+    font-weight: bold; /* Negrita para el título */
+}
+
+header p {
+    font-size: 1.1em; /* Tamaño del párrafo */
+    margin-top: 20px; /* Espacio superior */
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wiki de Parajes de Río Negro</h1>
+        <div class="moving-image-container">
+            <img src="logoAnimado.gif" alt="Descripción del GIF" class="moving-image">
+        </div>
+        
+        <p>"En cada rincón de nuestra tierra hay historias que merecen ser contadas. Como estudiantes, somos productores de conocimiento, guardianes del legado de nuestros parajes y voces que llevan el pasado y el presente hacia el futuro. Esta wiki refleja nuestra curiosidad, esfuerzo y compromiso por construir y compartir saberes que trascienden fronteras."</p>
+    </header>
+    
+    <nav>
+        <a href="#chelforo">Chelforó</a>
+        <a href="#aguadadeguerra">Aguada de Guerra</a>
+        <a href="#rincontreneta">Rincón Treneta</a>
+        <a href="#comicó">Comicó</a>
+        <a href="#yaminue">Yaminué</a>
+        <a href="#cerropolicia">Cerro Policía</a>
+        <a href="#aguadaguzman">Aguada Guzmán</a>
+        <a href="#mencue">Mencué</a>
+        <a href="#corralito">Corralito</a>
+        <a href="#naupahuen">Naupahuen</a>
+        <a href="#riochico">Río Chico</a>
+        <a href="#mamuelchoique">Mamuel Choique</a>
+        <a href="#aguadacecilio">Aguada Cecilio</a>
+        <a href="#sierrapaileman">Sierra Pailemán</a>
+        <a href="#arroyolosberros">Arroyo Los Berros</a>
+        <a href="#penasblancas">Peñas Blancas</a>
+        <a href="#lagunablanca">Laguna Blanca</a>
+        <a href="#conaniyeu">Conaniyeu</a>
+        <a href="#elcain">El Caín</a>
+        <a href="#lagopellegrini">Lago Pellegrini</a>
+        <a href="#villallanquin">Villa Llanquín</a>
+        <a href="#elmanso">El Manso</a>
+        <a href="#elcondor">El Cóndor</a>
+        <a href="#valleverde">Valle Verde</a>
+        <a href="#colanconhue">Colán Conhué</a>
+        <a href="#blancuracentro">Blancura Centro</a>
+    </nav>
+    <audio id="musicaFondo" loop>
+        <source src="cancionRural.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <button id="playButton">🎵 Reproducir Música</button>
+    
+    <script>
+        document.getElementById("playButton").addEventListener("click", function() {
+            var audio = document.getElementById("musicaFondo");
+            audio.play().catch(error => console.log("Error al reproducir:", error));
+        });
+    </script>
+    
+    <style>
+        #playButton {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #0056b3;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+    
+        #playButton:hover {
+            background-color: #003366;
+            transform: scale(1.1);
+        }
+    </style>
+    
+    
+    <div class="moving-image-container">
+        <img src="mapita.gif" alt="Descripción del GIF" class="moving-image" style="display: block; margin: 0 auto; width: 200%; max-width: 800px;">
+    </div>
+    <div class="content">
+        <h2>Aportes de los estudiantes sobre clase de WIKIPARAJES</h2>
+
+        <div id="chelforo" class="paraje">
+            <h3>Chelforó</h3>
+            <img src="CHELFORO.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            
+            <h4>1. Descripción General del Paraje</h4>
+            <p>
+                Chelforó es conocido por su rica historia y su entorno natural. Es un lugar ideal para aprender sobre la cultura local y disfrutar de la belleza del paisaje. Su gente es acogedora, y las tradiciones aún se mantienen vivas en cada rincón del paraje.
+            </p>
+        
+            <h4>2. Ubicación Relativa</h4>
+            <p>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> General Roca<br>
+                <strong>Región:</strong> Patagónica
+            </p>
+        
+            <h4>3. Ubicación Absoluta</h4>
+            <p>
+                <strong>Coordenadas Geográficas:</strong> -39.1234, -67.1234
+            </p>
+        
+            <h4>4. Población</h4>
+            <p>
+                <strong>Cantidad de Habitantes:</strong> 300
+            </p>
+        
+            <h4>5. Historia</h4>
+            <p>
+                <strong>Fundación:</strong> Fundada en 1905 por colonos europeos.<br>
+                <strong>Poblamiento:</strong> La llegada de los primeros pobladores se dio en el siglo XX, quienes se dedicaron principalmente a la agricultura y la ganadería.<br>
+                <strong>Hechos Salientes:</strong> Ha sido escenario de importantes eventos culturales y económicos, como festivales que celebran las tradiciones locales y ferias agrícolas que resaltan la producción de la zona.
+            </p>
+        
+            <h4>6. Geografía</h4>
+            <p>
+                <strong>Naturaleza:</strong> Rodeado de montañas y ríos, ofrece paisajes espectaculares. La flora y fauna locales son diversas, con especies nativas que se adaptan a las condiciones del entorno.<br>
+                <strong>Clima:</strong> Templado, con veranos cálidos e inviernos fríos. Las precipitaciones son moderadas, lo que favorece la agricultura.
+            </p>
+        
+            <h4>7. Transporte</h4>
+            <p>
+                <strong>Medios de Transporte:</strong> Se accede por ruta nacional y tiene un servicio de transporte local. También hay caminos rurales que facilitan el acceso a las zonas productivas.
+            </p>
+        
+            <h4>8. Economía</h4>
+            <p>
+                <strong>Actividades Económicas:</strong> Agricultura y turismo son las principales fuentes de ingreso. Los productos agrícolas de Chelforó se destacan en mercados locales y regionales.<br>
+                <strong>Recursos y Producción:</strong> La producción de frutas y verduras es notable, incluyendo cultivos de manzanas, peras y hortalizas. Además, el turismo rural ha comenzado a crecer, atrayendo visitantes interesados en las actividades al aire libre y la cultura local.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="aguadadeguerra" class="paraje">
+            <h3>Aguada de Guerra</h3>
+            <img src="ague.jpeg" alt="Descripción de Aguada de Guerra" style="width: 100%; height: auto;" />
+        
+            <p>
+                <strong>1. Descripción General del Paraje:</strong><br/>
+                Aguada de Guerra es un paraje emblemático que combina tradición y modernidad, ofreciendo un atractivo único para los visitantes y residentes.
+            </p>
+        
+            <p>
+                <strong>Toponimia:</strong><br/>
+                En un principio este paraje se llamaba Trapaleo, que significa en lenguas mapuche "Caudal del Agua" o lugar donde crece mucho junco, luego tomó el nombre de "Aguada de Guerra".
+                <br/>
+                Hay tres versiones sobre el origen de su nombre:
+                <br/>
+                1. Una de ellas cuenta que los tehuelches y los manzaneros se peleaban por una aguada muy grande.
+                <br/>
+                2. La otra cuenta que había un hombre de apellido Guerra, que era de la Aguada, su dueño.
+                <br/>
+                3. Otra teoría consiste en que el aguada era muy grande y venían muchos animales a tomar agua, y en las señaladas, tantos animales corriendo hacían parecer una guerra entre ellos.
+                <br/>
+                Aclaramos que la versión más creíble es la primera, descartando la segunda, porque los antiguos habitantes negaron conocer a alguien llamado Guerra.
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa:</strong><br/>
+                - <strong>País:</strong> Argentina<br/>
+                - <strong>Provincia:</strong> Río Negro<br/>
+                - <strong>Departamento:</strong> 25 de mayo<br/>
+                - <strong>Región:</strong> Patagónica
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta:</strong><br/>
+                - <strong>Coordenadas Geográficas:</strong><br/>
+                - Latitud: -41.06817<br/>
+                - Longitud: -68.38021
+            </p>
+        
+            <p>
+                <strong>4. Población:</strong><br/>
+                - <strong>Cantidad de Habitantes:</strong> 205 (en el último censo 2022).
+            </p>
+        
+            <p>
+                <strong>5. Historia:</strong><br/>
+                - <strong>Fundación:</strong> Se fundó en 1920.<br/>
+                - <strong>Poblamiento:</strong> A lo largo de la historia, el paraje ha atraído a familias de diversas procedencias en busca de nuevas oportunidades.<br/>
+                - <strong>Hechos Salientes:</strong> La llegada de punta de rieles quedó registrada en diciembre de 1912, lo cual fue un hito crucial para su desarrollo, facilitando el transporte de productos y personas.
+            </p>
+        
+            <p>
+                <strong>6. Geografía:</strong><br/>
+                - <strong>Naturaleza:</strong> Predomina un paisaje árido, caracterizado por la presencia de vegetación autóctona que se adapta a las condiciones del entorno.<br/>
+                - <strong>Clima:</strong> Seco, con precipitaciones escasas a lo largo del año, lo que influye en la vida diaria de sus habitantes. En este paraje, la estación más duradera es el invierno, es una zona muy fría; las heladas comienzan en el otoño y continúan hasta principio de noviembre. Algo también característico del clima son las fuertes ráfagas de viento, que además, por la falta de humedad, suelen levantar polvareda.
+            </p>
+        
+            <p>
+                <strong>7. Transporte:</strong><br/>
+                - <strong>Medios de Transporte:</strong><br/>
+                El paraje está ubicado en el kilómetro 305 de la Ruta Nacional N°23, por la que se conecta con las demás localidades de la región. Las principales formas de transporte en la zona que los habitantes usan para movilizarse son: Los automóviles particulares, motocicletas y bicicletas. Además, el colectivo de la empresa "Las Grutas" pasa todos los días conectando el paraje a las ciudades de San Carlos de Bariloche, Viedma, General Roca y localidades intermedias. El tren Patagónico pasa una vez por semana uniendo las ciudades de Viedma y San Carlos de Bariloche.
+            </p>
+        
+            <p>
+                <strong>8. Economía:</strong><br/>
+                - <strong>Actividades Económicas:</strong> La cría de ganado ovino y caprino, la agricultura familiar, la extracción y venta de piedras lajas y las artesanías son las principales actividades económicas del paraje.<br/>
+                - <strong>Recursos y Producción:</strong> La zona destaca en la producción de carne, lana y piedras lajas que son fundamentales para la economía local.
+            </p>
+        
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado
+            </p>
+        </div>
+        
+        
+
+        <div id="rincontreneta" class="paraje">
+            <h2>Rincón Treneta</h2>
+        
+            <img src="treneta.webp" alt="Descripción de Aguada de Guerra" style="width: 100%; height: auto;" />
+            
+            <p>
+                <strong>Descripción General del Paraje:</strong><br>
+                El paraje se encuentra ubicado al pie de la Meseta de Somuncurá en un valle pintoresco, surcado por un arroyo que nace de varias vertientes de la meseta. Se caracteriza por mantener costumbres gauchescas en su fiesta aniversario en febrero, con un gran asado popular gratuito, y destrezas criollas con jineteada, donde muchos tropilleros exhiben su caballada.
+            </p>
+        
+            <p>
+                <strong>Toponimia:</strong><br>
+                El nombre proviene del günün a yajüch (idioma del Pueblo Günün a küna o tehuelches) de "trünü" (silla de montar) y "ta" (donde hay), formando "trünüta", que significa "donde hay una silla de montar", en referencia a la forma del cerro local.
+            </p>
+        
+            <p>
+                <strong>Ubicación y Descripción del Paraje:</strong><br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> 9 de Julio<br>
+                <strong>Latitud:</strong> -40.850827743<br>
+                <strong>Longitud:</strong> -66.981684693
+            </p>
+        
+            <p>
+                <strong>Población:</strong><br>
+                El Paraje Treneta cuenta con aproximadamente 110 habitantes.
+            </p>
+        
+            <p>
+                <strong>Historia:</strong><br>
+                Aunque no se conoce una fecha exacta de fundación, se habla de 1884 como el aniversario, aunque ya estaba habitado por el pueblo tehuelche mucho antes. Posteriormente, varias familias se asentaron en el valle, desarrollando actividades agropecuarias.
+            </p>
+        
+            <p>
+                <strong>Geografía:</strong><br>
+                El paisaje es árido, típico de la Meseta de Somuncurá, con plantas como neneo, coirón y leña de vaca, mientras que en el valle la vegetación es más intensa.
+            </p>
+        
+            <p>
+                <strong>Clima:</strong><br>
+                Seco y frío, con precipitaciones escasas a lo largo del año, lo que influye en la vida diaria de sus habitantes.
+            </p>
+        
+            <p>
+                <strong>Transporte:</strong><br>
+                El acceso se realiza principalmente por rutas provinciales, ya que no hay transporte público. Los habitantes usan vehículos particulares para desplazarse.
+            </p>
+        
+            <p>
+                <strong>Economía:</strong><br>
+                La principal actividad económica es la agricultura y la cría de ganado vacuno.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="comicó" class="paraje">
+            <h3>Comicó</h3>
+            <img src="comico.webp" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+        <p>
+            <strong>1. Inicio</strong><br><br>
+            <strong>Descripción General del Paraje:</strong><br>
+            Comicó es un paraje pequeño y aislado de la Línea Sur de Río Negro. Su paisaje combina mesetas áridas y cielos abiertos. La comunidad está formada por unas pocas familias que encuentran en la ganadería y el trabajo comunitario su principal sustento.<br><br>
+            
+            <strong>2. Ubicación Relativa</strong><br><br>
+            - <strong>País:</strong> Argentina<br>
+            - <strong>Provincia:</strong> Río Negro<br>
+            - <strong>Departamento:</strong> Veinticinco de Mayo<br>
+            - <strong>Región:</strong> Línea Sur<br><br>
+            
+            <strong>3. Ubicación Absoluta</strong><br><br>
+            - <strong>Coordenadas Geográficas:</strong> Latitud -41.4667, Longitud -68.0333<br>
+            - A 25 km de la Ruta Nacional 23 y a 120 km de Ingeniero Jacobacci.<br><br>
+            
+            <strong>4. Población</strong><br><br>
+            - <strong>Cantidad de Habitantes:</strong> Aproximadamente 30 personas.<br>
+            - <strong>Dinámica Poblacional:</strong> Reducción constante debido a la migración juvenil.<br><br>
+            
+            <strong>5. Historia</strong><br><br>
+            - <strong>Orígenes:</strong> Antiguamente un punto de encuentro para caravanas de ganado.<br>
+            - <strong>Hechos Importantes:</strong> Apertura de la escuela rural en 1970, un eje comunitario desde entonces.<br><br>
+            
+            <strong>6. Geografía</strong><br><br>
+            - <strong>Naturaleza:</strong> Territorio árido, dominado por mesetas y arbustos bajos. Pastos ralos caracterizan el paisaje.<br>
+            - <strong>Clima:</strong> Seco, con lluvias escasas y frecuentes heladas en invierno.<br><br>
+            
+            <strong>7. Transporte</strong><br><br>
+            - <strong>Medios de Acceso:</strong> Principalmente caminos de ripio y senderos rurales.<br>
+            - <strong>Movilidad:</strong> Vehículos particulares y transporte ocasional en camiones.<br><br>
+            
+            <strong>8. Economía</strong><br><br>
+            - <strong>Actividades Económicas:</strong> Ganadería ovina y caprina de subsistencia.<br>
+            - <strong>Producción:</strong> Lana y cuero como principales productos.<br>
+            - <strong>Dificultades:</strong> Aislamiento geográfico y limitación de recursos.<br><br>
+        </p>
+        <p>
+            <strong>9. Autores del Trabajo:</strong><br/>
+            Estudiantes ciclo Orientado<br/>
+           
+        </p>
+    </div>
+    
+        
+        <div id="yaminue" class="paraje">
+            <h3>Yaminué</h3>
+            <img src="yaminue.png" alt="Descripción de Yaminué" style="width: 100%; height: auto;"/>
+            
+            <p><strong>1. Descripción General del Paraje</strong><br/>
+               Yaminué es un paraje ubicado en el Departamento 9 de Julio, en la región sur de la provincia de Río Negro. 
+               Se encuentra a 67 km al sur de la localidad de Ministro Ramos Mexía y a 20 km de Treneta. Su paisaje se caracteriza por 
+               una extensa vegetación y quebradas, formándose el Arroyo Yaminué en plena Meseta de Somuncura.
+            </p>
+            
+            <p><strong>2. Ubicación Relativa</strong><br/>
+               País: Argentina<br/>
+               Provincia: Río Negro<br/>
+               Departamento: 9 de Julio<br/>
+               Región: Meseta Patagónica
+            </p>
+            
+            <p><strong>3. Ubicación Absoluta</strong><br/>
+               Coordenadas Geográficas:<br/>
+               Latitud: 40°58′35″S<br/>
+               Longitud: 67°11′31″O
+            </p>
+            
+            <p><strong>4. Población</strong><br/>
+               Según el último censo de 2022, Yaminué cuenta con aproximadamente 130 habitantes. Los primeros pobladores, 
+               registrados entre 1919 y 1920, incluyeron a familias como los Mulato y los Inaguaquel.
+            </p>
+            
+            <p><strong>5. Historia</strong><br/>
+               Yaminué tiene un origen con varias versiones. Algunos lo relacionan con el topónimo “Yamnaue” mencionado por 
+               el naturalista George Claraz. Otros, como el Perito Moreno, lo asociaron con “Yemneu,” que significa paradero o 
+               campamento. Antiguamente, la población era nómade, compuesta por los Tehuelches Septentrionales. En 1941, 
+               se creó la primera escuela del paraje, la Escuela N° 145 “Estanislao del Campo”, siendo un hito en su desarrollo. 
+               A lo largo de los años, se han formado varias instituciones, como la Comisión de Fomento (1985), la Sala de Primeros 
+               Auxilios, el Destacamento Policial, y la Iglesia Evangélica.
+            </p>
+            
+            <p><strong>6. Naturaleza</strong><br/>
+               Yaminué es hogar de una fauna variada que incluye aves acuáticas como patos y teros, y especies terrestres como 
+               zorros, piches, liebres y avestruces. Su flora incluye vegetación típica de la estepa patagónica, adaptada al clima seco.
+            </p>
+            
+            <p><strong>7. Clima</strong><br/>
+               El clima de Yaminué es semiárido, con inviernos rigurosos y nevadas, y veranos secos y ventosos. Las precipitaciones 
+               son escasas durante todo el año.
+            </p>
+            
+            <p><strong>8. Medios de Transporte</strong><br/>
+               Los principales medios de transporte en Yaminué son autos y camionetas. Las rutas hacia el paraje, como la Ruta Terciaria 
+               508, son de tierra y presentan un estado regular, por lo que se recomienda transitar con precaución.
+            </p>
+            
+            <p><strong>9. Economía</strong><br/>
+               Los pobladores de Yaminué se dedican principalmente a la cría de ganado ovino y caprino en pequeña escala. También 
+               realizan trabajos en huertas familiares. La Comisión de Fomento apoya la limpieza y el mantenimiento de las 
+               instituciones del paraje, generando empleo local.
+            </p>
+            
+            <p><strong>10. Recursos y Producción</strong><br/>
+               Los principales recursos de Yaminué son naturales, como el agua, los suelos y los pastos, fundamentales para la 
+               ganadería local. También se fomenta el trabajo en huertas familiares y pequeñas producciones agrícolas.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="cerropolicia" class="paraje">
+            <h3>Cerro Policía</h3>
+            <img src="cerro.png" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+        
+            <p><strong>Descripción General</strong><br/>
+               Cerro Policía es un pequeño pueblo situado en el sur de Río Negro. A lo largo de los años, este paraje ha crecido y en la actualidad cuenta con un Centro de Atención Primaria de Salud (CAPS), la Escuela Primaria 193 “José Sabino Rojas”, el Anexo 9 de la ESRN Rural Virtual, una Comisión de Fomento, un destacamento policial, un juzgado de paz y un salón hípico. Además, hay varios comercios que ofrecen productos a los habitantes.
+            </p>
+        
+            <p><strong>Historia y Población</strong><br/>
+               Los vecinos sostienen que Cerro Policía fue fundado en 1905, tomando su nombre de un cerrito con forma de gorro policial ubicado a 10 km de distancia. En sus inicios, era solo un campo con muy pocas casas (menos de 20), todas de adobe y con techos de jarilla. En 1935, se construyó la Escuela Primaria 193, que funcionaba como escuela hogar. Muchos chicos llegaban desde el campo, viviendo en el albergue de lunes a viernes para realizar sus estudios primarios, sin acceso a educación secundaria. Con el tiempo, se fueron estableciendo más organismos públicos, como el Juzgado de Paz, el Centro de Atención Primaria de Salud, la Comisión de Fomento, el destacamento policial y la ESRN Rural Virtual – Anexo 9 (establecida en 2010), brindando a los jóvenes la oportunidad de obtener un título secundario.
+            </p>
+        
+            <p><strong>Ubicación</strong><br/>
+               Cerro Policía se encuentra en la provincia de Río Negro, Argentina, en el departamento El Cuy, a aproximadamente 145 km de la ciudad de General Roca.
+            </p>
+        
+            <p><strong>Habitantes</strong><br/>
+               La población de Cerro Policía es de aproximadamente 225 habitantes.
+            </p>
+        
+            <p><strong>Flora y Fauna</strong><br/>
+               En el poblado se pueden localizar diversas especies animales, como gato montés, guanacos, liebres, pumas, ñandúes, piches y zorros. La vegetación es escasa y baja, condicionada por las características del ambiente de la estepa. Algunas especies vegetales presentes son neneo, alpataco, solupe, jarilla arrastrada, fume, chilladora, zampa, algarrobos, alelí y álamos.
+            </p>
+        
+            <p><strong>Relieve</strong><br/>
+               La naturaleza en Cerro Policía está compuesta por montes que no superan los dos metros de altura, formando parte de la estepa patagónica, lo que da lugar a un territorio más bien ondulado.
+            </p>
+        
+            <p><strong>Clima</strong><br/>
+               El clima en Cerro Policía es frío y seco, con características de semidesierto y muy pocas precipitaciones. Se caracterizan por fuertes vientos, lluvias o nevadas en invierno, y veranos secos y calurosos.
+            </p>
+        
+            <p><strong>Recursos Económicos</strong><br/>
+               La principal actividad económica en Cerro Policía se basa en trabajos rurales, con un enfoque en la cría de ganado ovino, así como en la venta de lana y carne. En el paraje y sus alrededores, viven alrededor de 35 pequeños crianceros, aunque solo unos pocos cuentan con hasta 500 ovejas, lo cual es necesario para intentar sostener la actividad.
+            </p>
+        
+            <p><strong>Medios de Transporte</strong><br/>
+               Cerro Policía dispone de un servicio de transporte público de colectivo que pertenece a la empresa “Las Grutas”, disponible los días martes y jueves cada 15 días. Los martes pasa a las 18:00 hs y el jueves vuelve a las 10:00 hs, recorriendo los siguientes lugares: Mencué, Naupa Huen, Chasicó, Aguada Guzmán, Cerro Policía y llegando a la ciudad de General Roca. Este es el único medio de transporte público disponible, y los pobladores también pueden movilizarse en vehículos particulares.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+       
+
+        <div id="aguadaguzman" class="paraje">
+            <h3>Aguada Guzmán</h3>
+            <img src="Aguada Guzmán (1).jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;" />
+        
+            <p><strong>Descripción General</strong><br />
+               Aguada Guzmán es un pueblo rural que comenzó a formarse entre 1900 y 1910, con la llegada de las primeras familias y comerciantes. Su nombre proviene de un vecino de apellido Guzmán, que vivía cerca de aguadas donde se reunían los animales.
+            </p>
+        
+            <p><strong>Historia y Población</strong><br />
+               El paraje cuenta con cerca de 180 habitantes, de los cuales 110 residen en el paraje y 48 en los campos. En total, hay 36 varones y 12 mujeres en el campo. Las primeras familias en establecerse fueron los Nock, Carro, Aranda y Gómez. Aguada Guzmán celebra la fiesta del Maruchito en octubre, en honor a un niño llamado Pedro Farias que fue asesinado por su patrón.
+            </p>
+        
+            <p><strong>Ubicación</strong><br />
+               País: Argentina<br />
+               Provincia: Río Negro<br />
+               Departamento: El Cuy<br />
+               Región: Línea Sur
+            </p>
+        
+            <p><strong>Flora y Fauna</strong><br />
+               Situado en la estepa patagónica, con un relieve de mesetas y montañas bajas. El suelo es árido y duro, con plantas autóctonas como neneo, algarrobo y coirón. En el poblado se pueden localizar diversas especies animales, como gato montés, guanacos, liebres, pumas, ñandúes, piches y zorros.
+            </p>
+        
+            <p><strong>Relieve</strong><br />
+               La naturaleza en Aguada Guzmán está compuesta por montes que no superan los dos metros de altura, formando parte de la estepa patagónica, lo que da lugar a un territorio más bien ondulado.
+            </p>
+        
+            <p><strong>Clima</strong><br />
+               El clima en Aguada Guzmán es frío y ventoso en otoño, invierno y parte de la primavera. Las precipitaciones son escasas y hay nieve en invierno.
+            </p>
+        
+            <p><strong>Recursos Económicos</strong><br />
+               La principal actividad económica es la cría de animales, como ovejas, chivos y caballos. La comunidad se abastece de luz y agua mediante un generador y paneles solares en la escuela.
+            </p>
+        
+            <p><strong>Medios de Transporte</strong><br />
+               El transporte público pasa una vez al mes, viajando de Bariloche a General Roca. Los vecinos utilizan vehículos particulares y se movilizan a caballo.
+            </p>
+        
+            <p><strong>Autores del Trabajo</strong><br />
+               Estudiante: Kevin Fernández<br />
+               Clase: 11 - La Wiki de Paraje
+            </p>
+        </div>
+        
+        
+        
+        
+        <div id="mencue" class="paraje">
+            <h3>Mencué</h3>
+            <img src="MENCUE.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            
+            <p><strong>Descripción General del Paraje</strong><br/>
+               Mencué es una localidad situada en el Departamento El Cuy, en la provincia de Río Negro, al norte de la Patagonia Argentina. Está rodeada de un entorno natural y tranquilo, con una población aproximada de 500 habitantes, que puede llegar a 650 si se suman los parajes cercanos. La mayoría de los residentes son pequeños crianceros de ovejas y chivos. En lengua mapudungún, "Mencué" significa "llevar algo al hombro".
+            </p>
+        
+            <p><strong>Coordenadas</strong><br/>
+               GPS: -40.41667, -69.63333
+            </p>
+        
+            <p><strong>Accesibilidad</strong><br/>
+               El único acceso a Mencué es a través de la Ruta Provincial 67.
+            </p>
+        
+            <p><strong>Historia</strong><br/>
+               Mencué fue fundado el 26 de noviembre de 1906, cuando el ganadero Francisco García Crespo plantó el primer alambrado en la región, iniciando las primeras majadas de animales lanar. Con el tiempo, otros hombres llegaron a trabajar en el establecimiento, lo que contribuyó al crecimiento económico y poblacional del área. Debido a este aumento, se hizo necesario establecer una Dependencia Policial, seguida de un Juzgado de Paz, fundado en 1910. Estas entidades se ubicaron en Curalauquen, a más de tres leguas de la actual Mencué.
+            </p>
+        
+            <p><strong>Clima</strong><br/>
+               El clima en Mencué es frío, con temperaturas que pueden descender a 0 grados bajo cero durante el invierno.
+            </p>
+        
+            <p><strong>Transporte</strong><br/>
+               Los medios de transporte disponibles en la localidad incluyen:<br/>
+               - Autos<br/>
+               - Motocicletas<br/>
+               - Colectivo (que pasa una vez al mes, recorriendo Gral Roca y Bariloche)<br/>
+               - Caballos (los crianceros a menudo viajan a caballo al pueblo)
+               
+            </p>
+        
+            <p><strong>Actividad Económica</strong><br/>
+               La principal actividad económica de Mencué es la producción ovina, especialmente en actividades relacionadas con la lana.
+            </p>
+        
+            <p><strong>Estudiante:</strong> Yesica Loncoman</p>
+        </div>
+        
+        <div id="corralito" class="paraje">
+            <h2>Corralito</h2>
+            <img src="CORRALITO.JPG" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            <p>
+                <strong>Descripción del Lugar:</strong><br>
+                El Paraje Corralito se encuentra a 150 kilómetros de la ciudad de San Carlos de Bariloche, en la provincia de Río Negro, Argentina. Se accede desde la Ruta Nacional 237 hacia la represa hidroeléctrica Alicurá, y luego por camino de ripio de la ex Ruta Nacional Nº 40. Corralito está ubicado a 660 metros sobre el nivel del mar, en la confluencia del río Pichileufú y el arroyo Panquehuau, rodeado por un impresionante paisaje estepario con mesetas.
+            </p>
+        
+            <p>
+                <strong>Ubicación y Descripción del Paraje:</strong><br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> Pilcaniyeu<br>
+                <strong>Latitud:</strong> -40.7167<br>
+                <strong>Longitud:</strong> -70.7
+            </p>
+        
+            <p>
+                <strong>Población:</strong><br>
+                El Paraje Corralito cuenta con aproximadamente 25 viviendas familiares y varios asentamientos rurales dispersos a kilómetros de distancia.
+            </p>
+        
+            <p>
+                <strong>Historia:</strong><br>
+                No se sabe con certeza cuándo se fundó el paraje. Un vecino, Don Vergara Carlos, cuenta que, a principios del siglo XX, había mucho tránsito de ganado por el lugar. Su familia se asentó en el paraje en 1905 y desde entonces han desarrollado actividades agrícolas y ganaderas. Don Vergara destaca que su abuelo llegó en 1905 y su madre nació en 1912. Otro testimonio de la Sra. Ortega Nilda menciona el histórico Ramos Generales, que ha operado en el lugar por cerca de 100 años, desde 1928.
+            </p>
+        
+            <p>
+                <strong>Geografía:</strong><br>
+                El clima es semiárido, con veranos calurosos y temperaturas promedio de 22°C, inviernos fríos con heladas que superan los -15°C, y fuertes vientos en primavera y otoño. La zona está rodeada de montañas y mesetas, con afloramientos de rocas sedimentarias y vestigios de ocupaciones indígenas antiguas.
+            </p>
+        
+            <p>
+                <strong>Transporte:</strong><br>
+                Antiguamente, el transporte se realizaba con carretas tiradas por bueyes o caballos. Actualmente, se utilizan vehículos, aunque algunos aún usan caballos.
+            </p>
+        
+            <p>
+                <strong>Economía:</strong><br>
+                La principal actividad económica es la agropecuaria. Los pobladores crían ganado vacuno, ovino y porcino. También cultivan plantas forrajeras y hortalizas, y en los valles protegidos, frutas como cerezas, peras, ciruelas, duraznos y manzanas. Además, se practica la irrigación artificial con canales para mejorar pasturas y cultivos.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        
+
+        <div id="naupahuen" class="paraje">
+            <h3>Naupahuen</h3>
+            <img src="naupa.png" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+        
+            <p><strong>1. Inicio</strong></p>
+            <p><strong>Descripción General del Paraje:</strong><br/>
+                El paraje de Naupa Huen es un pueblo históricamente significativo, lleno de animales y plantas, que ofrece buenos lugares para pasar un día de diversión y tranquilidad.
+            </p>
+        
+            <p><strong>2. Ubicación Relativa</strong></p>
+            <ul>
+                <li><strong>País:</strong> Naupa Huen se encuentra en Río Negro, Argentina.</li>
+                <li><strong>Provincia:</strong> Está ubicado en el departamento de Cuy, al norte de la Patagonia Argentina, a orillas del Río Limay.</li>
+                <li><strong>Distancias:</strong> Se encuentra a 250 kilómetros de la ciudad de General Roca y a 30 kilómetros de Picun Leufu.</li>
+            </ul>
+        
+            <p><strong>3. Ubicación Absoluta</strong></p>
+            <p>Naupa Huen se encuentra en un valle rodeado de montañas y mesetas, caracterizado por:</p>
+            <ul>
+                <li><strong>Paisaje:</strong> Árido y semiárido, con vegetación escasa adaptada al clima seco.</li>
+                <li><strong>Montañas:</strong> Presencia del Cerro Naupa Huen que domina el valle.</li>
+                <li><strong>Río Limay:</strong> Atraviesa el valle, proporcionando agua para la agricultura y la ganadería.</li>
+                <li><strong>Clima:</strong> Templado-frío, con inviernos fríos y veranos suaves.</li>
+                <li><strong>Suelos:</strong> Áridos y pedregosos, con tosca y piedra caliza.</li>
+                <li><strong>Vegetación:</strong> Xerófila, con especies como coirón, neneo y calafate.</li>
+                <li><strong>Fauna:</strong> Adaptada al clima seco, incluyendo guanacos, pumas, zorrinos y aves rapaces.</li>
+            </ul>
+            <p>
+                El área es rica en recursos naturales, como agua, tierra fértil y minerales, lo que ha permitido el desarrollo de la agricultura, ganadería y minería, aunque enfrenta desafíos ambientales como la erosión del suelo y la escasez de agua.
+            </p>
+        
+            <p><strong>4. Población</strong></p>
+            <p>Naupa Huen tiene alrededor de 170 habitantes.</p>
+        
+            <p><strong>5. Historia</strong></p>
+            <p>
+                La historia de Naupa Huen se remonta a la época prehispánica, cuando era habitada por pueblos indígenas como los Tehuelches y los Mapuches, que vivían allí gracias a la presencia de recursos naturales. Con la llegada de colonizadores europeos en el siglo XIX, la región comenzó a ser explorada.
+            </p>
+            
+            <p><strong>Eventos Históricos Importantes:</strong></p>
+            <ul>
+                <li>1885: Creación de la Colonia Nahuel Huapi, que incluye la región de Naupa Huen.</li>
+                <li>1900: Establecimiento de la primera escuela en Naupa Huen.</li>
+                <li>1920: Creación del distrito de El Cuy, que incluye Naupa Huen.</li>
+                <li>1940: Inicio de la explotación petrolera en la región.</li>
+                <li>1960: Construcción de la primera iglesia en Naupa Huen.</li>
+                <li>1970: Construcción de la ruta nacional 237, mejorando las comunicaciones.</li>
+                <li>1985: Creación de la Comisión de Fomento de Naupa Huen.</li>
+                <li>1990: Inicio de la producción de energía hidroeléctrica en la región.</li>
+                <li>2000: Celebración del centenario de la fundación de Naupa Huen.</li>
+                <li>2010: Inicio de programas de turismo rural en la región.</li>
+            </ul>
+        
+            <p><strong>6. Geografía</strong></p>
+            <p><strong>Naturaleza:</strong><br/>
+                Naupa Huen se encuentra en el valle del Río Limay, en una región caracterizada por montañas, mesetas y valles.
+            </p>
+            
+            <p><strong>Clima:</strong><br/>
+                El clima en Naupa Huen es templado-frío, con inviernos fríos y veranos suaves. Hay una estación seca durante el verano y una estación húmeda durante el invierno.
+            </p>
+        
+            <p><strong>7. Transporte</strong></p>
+            <p>
+                Las formas de transporte público se limitan a un colectivo que viaja un día al mes. No hay ferrocarriles disponibles.
+            </p>
+        
+            <p><strong>8. Economía</strong></p>
+            <p>Las actividades económicas de Naupa Huen se centran en:</p>
+            <ul>
+                <li><strong> Agricultura:</strong> Cultivo de trigo, cebada, avena, alfalfa y otros cultivos adaptados al clima semiárido.</li>
+                <li><strong>Ganadería:</strong> Producción de carne ovina, caprina y bovina, así como lana.</li>
+                <li><strong>Minería:</strong> Explotación de petróleo, gas natural y piedra caliza.</li>
+                <li><strong>Turismo:</strong> Desarrollo de turismo rural, con actividades como cabalgatas y observación de fauna y flora.</li>
+                <li><strong>Servicios:</strong> Comercio, alojamiento y alimentación para visitantes.</li>
+                <li><strong>Artesanía:</strong> Producción de artesanías locales, como textiles y cerámica.</li>
+                <li><strong>Apicultura:</strong> Producción de miel y otros productos apícolas.</li>
+                <li><strong>Vitivinicultura:</strong> Cultivo de viñas y producción de vino.</li>
+            </ul>
+        
+            <p><strong>Recursos y Producción:</strong><br/>
+                Naupa Huen cuenta con una variedad de recursos naturales y produce diversos productos:
+            </p>
+            <ul>
+                <li><strong>Recursos naturales:</strong> Tierra fértil, agua del río Limay, pastizales, yacimientos de petróleo y minerales.</li>
+                <li><strong>Producción:</strong> Cereales (trigo, cebada), forrajes (alfalfa), frutas, carne (ovina, caprina, bovina), productos lácteos, miel y productos vitivinícolas.</li>
+            </ul>
+            <p>
+                La producción se centra en la agricultura, ganadería y explotación de recursos naturales, promoviendo la sostenibilidad y el manejo responsable de los mismos.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        <div id="riochico" class="paraje">
+            <h3>Río Chico</h3>
+            <img src="rio CHICO.jfif" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            
+            <p>
+                <strong>Río Chico</strong>
+            </p>
+            <ol>
+                <li>
+                    <strong>Inicio</strong>
+                    <br>
+                    Descripción General del Paraje
+                    <br>
+                    Río Chico es un pequeño paraje en Argentina que se caracteriza por su historia y su naturaleza. La llegada de los trenes y la construcción de la vía férrea han sido fundamentales para su desarrollo.
+                </li>
+                <li>
+                    <strong>Ubicación Relativa</strong>
+                    <br>
+                    País: Argentina
+                    <br>
+                    Departamento: Ñorquincó
+                    <br>
+                    Región: Sur
+                </li>
+                <li>
+                    <strong>Ubicación Absoluta</strong>
+                    <br>
+                    Coordenadas Geográficas: 41.709848° S, 70.477470° O
+                </li>
+                <li>
+                    <strong>Población</strong>
+                    <br>
+                    La población de Río Chico es de aproximadamente 590 habitantes en total.
+                </li>
+                <li>
+                    <strong>Fundación</strong>
+                    <br>
+                    El paraje no tiene un tiempo de fundación exacto, pero se sabe que entre 1930 y 1935, con el tendido de la vía férrea de Jacobacci a Esquel, se creó la estación Cerro Mesa, lo que marcó el inicio del asentamiento en Río Chico.
+                </li>
+                <li>
+                    <strong>Poblamiento</strong>
+                    <br>
+                    Las primeras poblaciones se formaron gracias a la llegada de los rieles de tren, lo que facilitó el asentamiento de las primeras familias en el paraje, construyendo casas y formando una comunidad.
+                </li>
+                <li>
+                    <strong>Hechos Salientes</strong>
+                    <br>
+                    El hecho más significativo en la historia de Río Chico fue la llegada de los trenes, que permitió el desarrollo de muchos pueblos y parajes en la zona rural.
+                </li>
+                <li>
+                    <strong>Geografía</strong>
+                    <ul>
+                        <li>
+                            <strong>Naturaleza</strong>
+                            <br>
+                            Río Chico presenta un relieve de meseta, con cañadones, amplios valles y profundas depresiones. La región es rica en minerales, incluyendo diques de granito y otros tipos de rocas.
+                        </li>
+                        <li>
+                            <strong>Clima</strong>
+                            <br>
+                            El clima predominante en Río Chico es frío extremo, con inviernos prolongados y veranos suaves. La región presenta sequías frecuentes y un clima ventoso, frío y seco.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Transporte</strong>
+                    <br>
+                    Los medios de transporte disponibles incluyen:
+                    <ul>
+                        <li>Vías ferroviarias</li>
+                        <li>Vehículos particulares</li>
+                        <li>Transporte (trafic y remis en ocasiones)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Economía</strong>
+                    <br>
+                    Las actividades económicas en Río Chico incluyen:
+                    <ul>
+                        <li>Agricultura: Cultivo de productos diversos.</li>
+                        <li>Ganadería: Crianza de animales y producción de carne.</li>
+                        <li>Pesca y caza: Actividades recreativas y alimenticias.</li>
+                        <li>Turismo: Atrae visitantes a la región.</li>
+                        <li>Artesanía: Producción de objetos locales y productos textiles.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Recursos y Producción</strong>
+                    <br>
+                    Los recursos naturales de Río Chico incluyen:
+                    <ul>
+                        <li>Río: Fuente de agua.</li>
+                        <li>Árboles: Recursos maderables.</li>
+                        <li>Minerales: Sal, caliza, limo arcilloso, piedra laja y áridos.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Producción</strong>
+                    <br>
+                    <strong>Alimentos:</strong> Dulces, escabeches, alfalfa, quesos.
+                    <br>
+                    <strong>Textiles:</strong> Venta de lana ovina y pelo caprino, incluyendo chalecos, ponchos, fajas, peleras, sinchas, gorros de abrigo, medias y guantes.
+                </li>
+            </ol>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        <div id="mamuelchoique" class="paraje">
+            <h3>Mamuel Choique</h3>
+            <img src="MCHOIQUE.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            
+            <h4>Descripción General del Paraje</h4>
+            <p>El paraje de Mamuel Choique presenta una destacada amplitud turística relacionada con la espeleología, gracias a las cavernas naturales de formación cuaternaria que alberga.</p>
+        
+            <h4>Ubicación Relativa</h4>
+            <p>Mamuel Choique se encuentra en el Departamento Ñorquincó, en el sudoeste de la provincia de Río Negro, Argentina. Está ubicado a 180 km de San Carlos de Bariloche y cuenta con una estación ferroviaria del Viejo Expreso Patagónico, más conocida como La Trochita. Los trabajadores ferroviarios realizan el mantenimiento de las vías para garantizar un tránsito seguro de "La Trochita". Además, en la zona se encuentra un lugar turístico conocido como “Las Pintadas”.</p>
+        
+            <h4>Pinturas de "Las Pintadas"</h4>
+            <p>Las pinturas que integran la piedra pintada han sido ejecutadas en un afloramiento rocoso de tobas porfiríticas, ligeramente rojizas. Los colores utilizados en estas pinturas incluyen el rojo, el violáceo y el amarillo, que se confeccionaban con frutos, plantas y rocas molidas, utilizando sangre de los animales cazados y grasa como aglutinante.</p>
+        
+            <h4>Coordenadas Geográficas</h4>
+            <p>Latitud: 41°46′16″S<br>
+            Longitud: 70°08′13″O</p>
+        
+            <h4>Población</h4>
+            <p>El paraje tiene aproximadamente 100 habitantes que se mantienen en la zona y en áreas aledañas.</p>
+        
+            <h4>Fundación</h4>
+            <p>El paraje de Mamuel Choique fue fundado el 15 de septiembre de 1915.</p>
+        
+            <h4>Hechos Salientes</h4>
+            <p>El aniversario del paraje se celebra el 16 de octubre, con diversas actividades que incluyen campeonatos de fútbol, compartidas con la comunidad, ciclismo y trekking.</p>
+        
+            <h4>Naturaleza</h4>
+            <p>El paraje es bastante seco y gris, con muy poca agua y escasez de áreas verdes.</p>
+        
+            <h4>Clima</h4>
+            <p>El clima es ventoso y frío, lo que limita el desarrollo de árboles en la región.</p>
+        
+            <h4>Medios de Transporte</h4>
+            <p>Actualmente, existe un servicio de tráfico que realiza el recorrido de Ingeniero Jacobacci hasta El Bolsón, disponible solo los días lunes y viernes. También se encuentran vehículos particulares para el transporte.</p>
+        
+            <h4>Actividades Económicas</h4>
+            <p>Las actividades económicas del paraje incluyen la venta de animales, lana y productos tejidos.</p>
+        
+            <h4>Autora</h4>
+            <p>Cisneros Sofía – 5to Año<br>
+            Sede: Mamuel Choique</p>
+        </div>
+        
+        <div id="aguadacecilio" class="paraje">
+            <h3>Aguada Cecilio</h3>
+            <img src="CECILIO.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            
+            <h4>Descripción General del Paraje</h4>
+            <p>Aguada Cecilio es un pequeño paraje ubicado en la provincia de Río Negro, Argentina. Este lugar es un oasis de paz y tranquilidad, con una diversa variedad de flora y fauna. Sus características e historias lo convierten en un lugar llamativo.</p>
+            
+            <h4>Ubicación Relativa</h4>
+            <p>
+                País: Argentina<br>
+                Provincia: Río Negro<br>
+                Departamento: Valcheta<br>
+                Región: Patagónica
+            </p>
+            
+            <h4>Ubicación Absoluta</h4>
+            <p>Coordenadas Geográficas: Latitud: -40.8567, Longitud: -65.8008</p>
+            
+            <h4>Población</h4>
+            <p>Cantidad de Habitantes: 91 (según el último censo)</p>
+            
+            <h4>Historia</h4>
+            <p>
+                Fundación: 20 de marzo de 1910, en honor a Cecilio Crespo, un pionero que descubrió una vertiente de agua dulce en la zona.<br>
+                Poblamiento: Las primeras poblaciones en el área se fueron sumando tras la inauguración de las vías férreas, alrededor de las cuales se construyeron viviendas.<br>
+                Hechos Salientes: El descubrimiento de la "aguadita" y la creación de la vía férrea fueron eventos históricos que fomentaron el crecimiento del paraje.
+            </p>
+            
+            <h4>Geografía</h4>
+            <p>
+                Naturaleza: Aguada Cecilio se encuentra al pie de Namuncurá, una formación montañosa. En la zona hay cerros de bajas alturas y un terreno pedregoso. La vegetación autóctona incluye jarillas, botón de oro, árboles frutales como membrillos, cerezas y duraznos, además de huertas con acelgas, repollos y lechuga.<br>
+                Clima: El clima es variado, con inviernos fríos y veranos cálidos. Las precipitaciones y granizos son variables a lo largo del año, aunque la nieve es poco frecuente. Los granizos afectan especialmente a las huertas locales.
+            </p>
+            
+            <h4>Transporte</h4>
+            <p>Medios de Transporte: El colectivo pasa diariamente; hacia Bariloche a las 10:00 pm y hacia Viedma a las 6:00 am. El tren pasa los lunes de madrugada y los viernes en dirección a Bariloche.</p>
+            
+            <h4>Economía</h4>
+            <p>
+                Actividades Económicas: La ganadería es una de las principales actividades económicas, con productos como lana y cuero. También se encuentra piedra caliza en el área.<br>
+                Recursos y Producción: Existen comercios que venden mercadería diversa.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        
+        <div id="sierrapaileman" class="paraje">
+            <h3>Sierra Pailemán</h3>
+            <img src="sierra.webp" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+                <p>
+                    <strong>1. Inicio</strong><br><br>
+                    <strong>Descripción General del Paraje:</strong><br>
+                    Sierra Pailemán es un paraje remoto ubicado en la región costera de la provincia de Río Negro. Con paisajes áridos y una biodiversidad especial, es conocido por sus serranías y el avistamiento de fauna local como guanacos y cóndores. La vida aquí transcurre en calma, con pocas familias dedicadas a actividades rurales.<br><br>
+                    
+                    <strong>2. Ubicación Relativa</strong><br><br>
+                    - <strong>País:</strong> Argentina<br>
+                    - <strong>Provincia:</strong> Río Negro<br>
+                    - <strong>Departamento:</strong> Valcheta<br>
+                    - <strong>Región:</strong> Línea Sur Costera<br><br>
+                    
+                    <strong>3. Ubicación Absoluta</strong><br><br>
+                    - <strong>Coordenadas Geográficas:</strong> Latitud -40.7001, Longitud -65.3007<br>
+                    - Ubicado a 80 km de Las Grutas y a 50 km del Océano Atlántico.<br><br>
+                    
+                    <strong>4. Población</strong><br><br>
+                    - <strong>Cantidad de Habitantes:</strong> Menos de 50 personas, en su mayoría familias ganaderas.<br>
+                    - <strong>Edad Promedio:</strong> Mayores de 40 años, con pocos niños.<br><br>
+                    
+                    <strong>5. Historia</strong><br><br>
+                    - <strong>Origen del Nombre:</strong> Su nombre proviene de las serranías que rodean el área, de gran relevancia geográfica.<br>
+                    - <strong>Poblamiento:</strong> Asociado a la actividad ganadera en la región desde principios del siglo XX.<br>
+                    - <strong>Eventos Relevantes:</strong> Creación de caminos rurales para mejorar la conectividad.<br><br>
+                    
+                    <strong>6. Geografía</strong><br><br>
+                    - <strong>Naturaleza:</strong> Serranía con formaciones rocosas y cañadones. Es hábitat del cóndor andino, lo que atrae interés científico.<br>
+                    - <strong>Clima:</strong> Árido, con inviernos fríos y veranos cálidos. Escasas precipitaciones.<br><br>
+                    
+                    <strong>7. Transporte</strong><br><br>
+                    - <strong>Acceso:</strong> Por caminos rurales de ripio, conectando con rutas provinciales.<br>
+                    - <strong>Transporte Público:</strong> No disponible; movilidad limitada a vehículos propios.<br><br>
+                    
+                    <strong>8. Economía</strong><br><br>
+                    - <strong>Ganadería:</strong> Actividad predominante, especialmente ovina y caprina.<br>
+                    - <strong>Turismo Rural:</strong> Interés por la observación de fauna y paisajes naturales.<br>
+                    - <strong>Desafíos:</strong> Escasez de recursos hídricos limita la productividad.<br><br>
+                </p>
+            </div>
+            
+           
+            <div id="arroyolosberros" class="paraje">
+                <h3>Arroyo Los Berros</h3>
+                <img src="arroyoBErros.png" alt="Imagen de Arroyo Los Berros" style="width: 100%; height: auto;"/>
+                               
+                <h4>1. Inicio</h4>
+                <p>
+                    Arroyo Los Berros es un paraje que se destaca por su tranquilidad, la calidad de sus habitantes, y la rica flora y fauna que lo rodea, lo que lo hace muy atractivo para los visitantes.
+                </p>
+        
+                <h4>2. Ubicación Relativa</h4>
+                <ul>
+                    <li><strong>País:</strong> Argentina</li>
+                    <li><strong>Provincia:</strong> Río Negro</li>
+                    <li><strong>Departamento:</strong> Valcheta</li>
+                    <li><strong>Región:</strong> Patagónica</li>
+                </ul>
+        
+                <h4>3. Ubicación Absoluta</h4>
+                <p><strong>Coordenadas Geográficas:</strong> -41.46667, -65.96667</p>
+        
+                <h4>4. Población</h4>
+                <p>Actualmente, la población aproximada es de 126 habitantes, aunque muchos no tienen domicilio en el lugar.</p>
+        
+                <h4>5. Historia</h4>
+                <p><strong>Fundación:</strong> Fundado alrededor del año 1884.</p>
+                <p><strong>Poblamiento:</strong> Se cree que el lugar fue descubierto durante una expedición, y los primeros habitantes se establecieron cerca del arroyo.</p>
+                <p><strong>Hechos Salientes:</strong></p>
+                <ul>
+                    <li>Entre 1970 y 1972 se realizó el estudio del acueducto que proveería agua a la mina Hipasam.</li>
+                    <li>En 1987 se fundó la cooperativa "Villa Llequín".</li>
+                    <li>En 1990 se instaló el servicio de televisión por aire.</li>
+                </ul>
+        
+                <h4>6. Geografía</h4>
+                <p>Naturaleza: El lugar está rodeado de mesetas, valles y cañadones, con arroyos que caracterizan su paisaje.</p>
+                <p><strong>Clima:</strong></p>
+                <ul>
+                    <li><strong>Invierno:</strong> Frío y seco, con temperaturas que oscilan entre -3°C y 15°C.</li>
+                    <li><strong>Verano:</strong> Caluroso y seco, con temperaturas que varían entre 20°C y 40°C.</li>
+                </ul>
+        
+                <h4>7. Transporte</h4>
+                <p>
+                    Se accede al paraje a través de la Ruta Provincial N°61, Ruta Provincial N°58, y también por la Ruta N°5 desde Arroyo Ventana. Actualmente no hay transporte público disponible.
+                </p>
+        
+                <h4>8. Economía</h4>
+                <p>
+                    <strong>Actividades Económicas:</strong> La actividad principal era la ganadería ovina y caprina, aunque está en declive por la presencia de pumas. Actualmente se trabaja con cultivos de hortalizas y se desarrolla un proyecto de olivos.
+                </p>
+                <p>
+                    <strong>Recursos y Producción:</strong> La producción de papa, cebolla y leña son los recursos más importantes en la localidad.
+                </p>
+                <p>
+                    <strong>9. Autores del Trabajo:</strong><br/>
+                    Estudiantes ciclo Orientado<br/>
+                   
+                </p>
+            </div>
+      
+            <div id="penasblancas" class="paraje">
+                <h3>Peñas Blancas</h3>
+                <img src="peñasBlancas.png" alt="Imagen de Peñas Blancas" style="width: 100%; height: auto;" />
+                
+                <p>
+                    <strong>1. Descripción General del Paraje:</strong><br/>
+                    Peñas Blancas, también conocida como Colonia Peñas Blancas, es una localidad y comisión de fomento 
+                    ubicada al extremo norte de la provincia de Río Negro, en el departamento General Roca, al norte de la Patagonia Argentina. 
+                    Esta colonia agrícolo-ganadera se encuentra a 35 kilómetros de la ciudad de Catriel, en una zona de producción petrolera, y 
+                    a 20 kilómetros de 25 de Mayo, en la provincia de La Pampa.
+                </p>
+            
+                <p>
+                    <strong>2. Ubicación Relativa:</strong><br/>
+                    - <strong>País:</strong> Argentina<br/>
+                    - <strong>Provincia:</strong> Río Negro<br/>
+                    - <strong>Departamento:</strong> General Roca<br/>
+                    - <strong>Región:</strong> Patagonia
+                </p>
+            
+                <p>
+                    <strong>3. Ubicación Absoluta:</strong><br/>
+                    - <strong>Coordenadas Geográficas:</strong><br/>
+                    - <strong>Latitud:</strong> -39.0163<br/>
+                    - <strong>Longitud:</strong> -67.5905
+                </p>
+            
+                <p>
+                    <strong>4. Historia:</strong><br/>
+                    Peñas Blancas fue fundado en 1946 como parte de un proceso de colonización agrícola. Las primeras familias llegaron 
+                    atraídas por tierras fértiles, impulsando la agricultura y la ganadería. En 1976, una gran inundación marcó un hito 
+                    en la comunidad, afectando su infraestructura pero fortaleciendo su resiliencia.
+                </p>
+            
+                <p>
+                    <strong>5. Geografía:</strong><br/>
+                    La región presenta paisajes rurales con vastas tierras áridas, pastizales y áreas agrícolas, además de la proximidad al 
+                    Río Colorado, que permite el riego de campos.
+                </p>
+            
+                <p>
+                    <strong>6. Clima:</strong><br/>
+                    El clima es árido y continental, con veranos cálidos (hasta 30 °C) e inviernos fríos (hasta -5 °C). Las precipitaciones 
+                    son escasas y se concentran en primavera y otoño.
+                </p>
+            
+                <p>
+                    <strong>7. Transporte:</strong><br/>
+                    El paraje está conectado principalmente por caminos rurales que facilitan el acceso. La movilidad depende, en gran medida, 
+                    de vehículos particulares, ya que no hay ferrocarriles.
+                </p>
+            
+                <p>
+                    <strong>8. Economía:</strong><br/>
+                    Las principales actividades son la agricultura y la ganadería, con cultivos de frutas y hortalizas y cría de ganado ovino 
+                    y bovino, pilares fundamentales de la economía local.
+                </p>
+            
+                <p>
+                    <strong>9. Autores del Trabajo:</strong><br/>
+                    Estudiantes ciclo Orientado<br/>
+                   
+                </p>
+            </div>
+            
+
+        <div id="lagunablanca" class="paraje">
+            <h3>Laguna Blanca</h3>
+            <img src="lagunaBlanca.png" alt="Descripción de Laguna Blanca" style="width: 100%; height: auto;" />
+            
+            <p>
+                <strong>1. Descripción General del Paraje:</strong><br/>
+                Laguna Blanca es un pequeño paraje ubicado en la provincia de Río Negro, dentro del departamento Pilcaniyeu. 
+                Su nombre proviene de una laguna salitral cercana. Este lugar alberga aproximadamente a 245 habitantes, entre 
+                urbanos y rurales, que disfrutan de la paz y tranquilidad que ofrece la región, además de su ritmo de vida pausado. 
+                Las actividades artesanales, especialmente tejidos y fieltros, son de gran importancia para la comunidad, 
+                preservando las tradiciones locales.
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa:</strong><br/>
+                - <strong>País:</strong> Argentina<br/>
+                - <strong>Provincia:</strong> Río Negro<br/>
+                - <strong>Departamento:</strong> Pilcaniyeu<br/>
+                - <strong>Región:</strong> Meseta Patagónica
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta:</strong><br/>
+                - <strong>Coordenadas Geográficas:</strong><br/>
+                - <strong>Latitud:</strong> -40.721834<br/>
+                - <strong>Longitud:</strong> -69.841457
+            </p>
+        
+            <p>
+                <strong>4. Población:</strong><br/>
+                Actualmente, viven aproximadamente 130 personas en el paraje. Sumando las familias rurales, la comunidad total 
+                asciende a unos 245 habitantes.
+            </p>
+        
+            <p>
+                <strong>5. Historia:</strong><br/>
+                Laguna Blanca comenzó su desarrollo en la década de 1930 gracias al comercio de don García Crespo y Fernando Carro, 
+                quienes establecieron un almacén de ramos generales. Esto impulsó el crecimiento de la comunidad, con la construcción 
+                de la primera escuela y la llegada de nuevos pobladores. A lo largo de las décadas, se fueron construyendo más casas 
+                y se establecieron instituciones como la Comisión de Fomento, la Sala de Primeros Auxilios, y la cooperativa ganadera 
+                en la década de 1980. El acceso a electricidad llegó en 2004 con la instalación de un grupo electrógeno, seguido por 
+                la instalación de paneles solares en 2014, y la llegada de gas en 2016. En 2022, un proyecto provincial mejoró la 
+                conectividad de internet en la región, beneficiando tanto a los estudiantes como a la comunidad en general.
+            </p>
+        
+            <p>
+                <strong>6. Geografía:</strong><br/>
+                El relieve de Laguna Blanca es típico de la estepa patagónica, con extensas llanuras y pequeñas variaciones en la 
+                elevación. La laguna salitral, que da nombre al paraje, es el principal cuerpo de agua, rodeada de cerros que permiten 
+                vistas panorámicas. El clima es árido y semiárido, con estaciones bien definidas.
+            </p>
+        
+            <p>
+                <strong>7. Transporte:</strong><br/>
+                Laguna Blanca se conecta con otras ciudades a través de empresas de colectivos de línea, como "Las Grutas", que pasan 
+                dos veces al mes. Este servicio une ciudades como San Carlos de Bariloche y General Roca, haciendo el recorrido por la 
+                Línea Sur, incluyendo a Laguna Blanca.
+            </p>
+        
+            <p>
+                <strong>8. Economía:</strong><br/>
+                La economía local se basa principalmente en la ganadería y la prestación de servicios en instituciones como escuelas, 
+                centros de salud y la Comisión de Fomento. Pequeños negocios como despensas multirrubros también contribuyen a la 
+                economía local.
+            </p>
+        
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes: Suyay Maliqueo, Franco Cayu, Antu Ruiz, Lautaro Dominguez, Selene Varnes, Leonel Maliqueo<br/>
+                Curso: 5°, 4° y 3° Año<br/>
+                Tutora: Daiana Macaya<br/>
+                Área: Ciencias Sociales y Humanidades<br/>
+                Clase: 11
+            </p>
+        </div>
+        
+        
+
+        <div id="conaniyeu" class="paraje">
+            <h3>Conaniyeu</h3>
+            <img src="cona.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;" />
+            <p>
+                <strong> CONA NIYEU = Lugar del joven guerrero (Cona: Joven guerrero; Niyeu: Lugar)</strong><br><br>
+                
+                <strong>1. Inicio</strong><br><br>
+                Cona Niyeu es uno de los pueblos más aislados de la provincia de Río Negro. Está ubicado al pie de la meseta de Somuncurá y destaca por su relieve de meseta. Al igual que toda la zona circundante.Actualmente, como a en todo el mundo, el clima cambió y sus temperaturas mínima en invierno son aproximadamente entre -7°C y -10°C.<br><br>
+          
+                <strong>2. Ubicación Relativa</strong><br><br>
+                - <strong>País:</strong> Argentina<br>
+                - <strong>Provincia:</strong> Río Negro<br>
+                - <strong>Departamento:</strong> Nueve de Julio<br>
+                - <strong>Región:</strong> Es uno de los pueblos más aislados de la provincia<br><br>
+        
+                <strong>3. Ubicación Absoluta</strong><br><br>
+                - <strong>Coordenadas Geográficas:</strong> 41°51′57″S 66°56′17″O<br><br>
+        
+                <strong>4. Población</strong><br><br>
+                - <strong>Cantidad de Habitantes:</strong> Cuenta con 217 habitantes (Indec, 2010), lo que representa un incremento del 3% frente a los 211 habitantes (Indec, 2001) del censo anterior.<br><br>
+        
+                <strong>5. Historia</strong><br><br>
+                - <strong>Fundación:</strong> Cona Niyeu posee un sitio reconocido  de generación en generación como CHENQUE (Sepoltura) del CONA (Joven guerrero y/o muchachos que se dedicaban por el bienestar de su comunidad). En honor a ese joven sepultado en el lugar se denominó al valle situado al sur de la Meseta de Somuncura, CONA NIYEU: “LUGAR DEL JOVEN GUERRERO”<br>
+                - <strong>Poblamiento:</strong> Según datos históricos de la dirección de tierras y colonias, los primeros pobladores datan de 1906. <br>
+                - <strong>Hechos Salientes:</strong> 24 DE JUNIO: Fecha en la que los primeros pobladores de la zona se reunían para celebrar la llegada del año nuevo o renovación del ciclo anual (MAPUCHE) WIÑOY TRIPANCU coincidente con el solsticio de invierno (Noche más larga) Y FESTIVOS PARA TODOS LOS PUEBLOS ORIGINARIOS.<br><br>
+        
+                <strong>6. Geografía</strong><br><br>
+                CONA NIYEU se ubica en el sudeste de la provincia de Río Negro y abarca parte de la meseta de Somún Curá. Se destacan algunas serranías como las de Campana Mahuida y las situadas en el rincón del arroyo Verde. La región está avenada por los arroyos Cona, Verde, Tambelén y Ventana y sus tributarios. En la constitución geológica de la región intervienen unidades metamórficas, ígneas y sedimentarias desarrolladas desde el Precámbrico hasta el presente. Entre los rasgos geomorfológicos más distintivos se destaca la meseta de Somún Curá, la cual está circundada por una ancha faja de depósitos de remoción en masa y pedimentos de flanco.<br><br>
+        
+                <strong>7. Hidrografía</strong><br><br>
+                En Cona Niyeu hay lagunas, tajamares, salitrales y el arroyo del cual se saca agua para beber y sustentar el pueblo. El agua del arroyo está en buenas condiciones y es de alta calidad. Las lagunas, tajamares y salitrales, al igual que algunos canales que van del mismo arroyo, se utilizan para los animales.<br><br>
+        
+                <strong>8. Aspectos Biológicos</strong><br><br>
+                La flora de Cona Niyeu es muy variada; en el verano, el valle se vuelve verde, mientras que en el invierno las temperaturas son frías. Algunas de las plantas silvestres que se encuentran son jarilla, tomillo, zampa, algarrobillo, molle y pichana. En cuanto a la fauna, se pueden encontrar perros, gatos, zorro, puma, guanacos, ovejas, caballos, entre otros.<br><br>
+        
+                <strong>9. Aspecto Humano</strong><br><br>
+                Una parte del paraje se dedica a la agricultura, incluyendo quintas, invernáculos y micro túneles para cultivar verduras. Algunas de estas verduras se venden, mientras que otras son para consumo propio, asegurando así el acceso a alimentos frescos.<br><br>
+        
+                <strong>10. Economía</strong><br><br>
+                - <strong>Actividades Económicas:</strong> Cría de animales, huertas, arrestarías (tales como tejidos en telar mapuche), Hilado de lana de guanaco y ovejas, Venta de huevos, etc<br>
+                - <strong>Recursos y Producción:</strong> Ganadería ovina, caprina y agricultura
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        <div id="elcain" class="paraje">
+            <h3>El Caín</h3>
+            <img src="elCaín.png" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+        
+            <h4>1. Descripción General del Paraje</h4>
+            <p>
+                El Caín es una localidad y comisión de fomento del Departamento 25 de Mayo, situada en la zona de la Meseta de Somuncurá, en la provincia de Río Negro, al norte de la Patagonia, Argentina. Con una rica historia cultural y un entorno natural impresionante, El Caín se ha convertido en un lugar de referencia para la comunidad rural. Desde su fundación en 1916, ha sido un punto de encuentro para familias que buscan mantener sus tradiciones mientras acceden a educación moderna a través de la ESRN Rural Virtual N° 22.
+            </p>
+        
+            <h4>2. Ubicación Relativa</h4>
+            <p>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> 25 de Mayo<br>
+                <strong>Región:</strong> Patagónica
+            </p>
+        
+            <h4>3. Ubicación Absoluta</h4>
+            <p>
+                <strong>Coordenadas Geográficas:</strong> -41.633333, -68.316667
+            </p>
+        
+            <h4>4. Población</h4>
+            <p>
+                <strong>Cantidad de Habitantes:</strong> 176 (censo reciente indica 383 habitantes).
+            </p>
+        
+            <h4>5. Historia</h4>
+            <p>
+                <strong>Fundación:</strong> Fundado el 5 de mayo de 1916.<br>
+                <strong>Poblamiento:</strong> La llegada de los primeros pobladores se dio en el siglo XX, quienes se dedicaron principalmente a la agricultura y la ganadería. La comunidad ha crecido y se ha adaptado a los cambios a lo largo de los años.<br>
+                <strong>Hechos Salientes:</strong> En 2010, se instalaron pantallas de internet satelital, mejorando la comunicación y conectividad de la localidad. La ESRN Rural Virtual N° 22 comenzó a funcionar el 10 de marzo de 2011 en la Escuela Primaria N° 173, permitiendo que jóvenes cursen el secundario sin tener que abandonar su hogar. Esto ha dado lugar a un aumento en el nivel educativo de la comunidad.
+            </p>
+        
+            <h4>6. Geografía</h4>
+            <p>
+                <strong>Naturaleza:</strong> La flora incluye especies como molle, michay y una variedad de hierbas nativas. La fauna es rica, con pumas, zorros, guanacos y aves autóctonas. Este entorno natural ofrece oportunidades para el ecoturismo y la conservación de especies.<br>
+                <strong>Clima:</strong> El clima en El Caín es frío, con inviernos extremadamente duros que dificultan las actividades humanas, pero que también le dan al paisaje su característico aspecto desolado y hermoso.
+            </p>
+        
+            <h4>7. Transporte</h4>
+            <p>
+                <strong>Medios de Transporte:</strong> No existe transporte público; los pobladores se desplazan con movilidad propia. Se accede a la localidad a través de la RP 5 desde Maquinchao, a unos 150 km, y la RP 67 hacia Gan Gan en Chubut. Las condiciones de las rutas pueden variar según la temporada, especialmente durante el invierno.
+            </p>
+        
+            <h4>8. Economía</h4>
+            <p>
+                <strong>Actividades Económicas:</strong> La economía se basa principalmente en la crianza de ganado ovino, bovino y equino. La mayoría de los habitantes se dedican a la ganadería, que es el pilar fundamental de su subsistencia. También se están comenzando a implementar técnicas de producción agrícola.<br>
+                <strong>Recursos y Producción:</strong> La Meseta de Somuncurá ofrece recursos turísticos y espacios para disfrutar de la naturaleza. La producción agrícola incluye ganadería ovina, caprina y bovina, además de invernaderos de bajo cubierta, que han comenzado a diversificar la economía local.
+            </p>
+        
+            <h4>9. Educación</h4>
+            <p>
+                La ESRN Rural Virtual N° 22 ha sido un pilar fundamental en la educación de los jóvenes de la localidad, permitiéndoles finalizar sus estudios secundarios. Muchos de los egresados han continuado sus estudios en áreas como salud pública, educación y fuerzas de seguridad, mientras que otros han optado por emigrar en búsqueda de nuevas oportunidades. La educación a distancia ha transformado la vida de muchas familias, promoviendo el desarrollo profesional y personal.
+            </p>
+        
+            <h4>10. Cultura y Tradiciones</h4>
+            <p>
+                El Caín también se destaca por sus festividades locales, donde la comunidad se reúne para celebrar tradiciones que han sido transmitidas de generación en generación. La música, la danza y la gastronomía típica forman parte de estas celebraciones, fomentando un sentido de pertenencia y unidad entre los habitantes.
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="lagopellegrini" class="paraje">
+            <h3>Lago Pellegrini</h3>
+            <img src="Lago_Pellegrini.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            <p>
+                <strong>1. Descripción General del Paraje</strong><br>
+                Lago Pellegrini es un lago de gran importancia en la provincia de Río Negro, Argentina. Su ubicación y características lo convierten en un destino turístico atractivo, ofreciendo diversas actividades recreativas como navegación, pesca y camping.
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa</strong><br>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> General Roca<br>
+                <strong>Ruta:</strong> Se encuentra sobre la ruta 70, cerca de General Roca.
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta</strong><br>
+                <strong>Coordenadas Geográficas:</strong><br>
+                <strong>Latitud:</strong> 38° 40' 00" S<br>
+                <strong>Longitud:</strong> 68° 00' 00" O<br>
+                <strong>Altitud:</strong> 270 m sobre el nivel del mar.
+            </p>
+        
+            <p>
+                <strong>4. Población</strong><br>
+                La población actual en la zona del Lago Pellegrini es de aproximadamente 3,000 habitantes, con un crecimiento demográfico reciente que podría alcanzar un máximo de 5,000 habitantes.
+            </p>
+        
+            <p>
+                <strong>5. Historia</strong><br>
+                <strong>Contexto Inicial:</strong> Antes de la construcción del lago, la región era árida y poco poblada. La necesidad de mejorar la producción agrícola y ganadera llevó a implementar proyectos de irrigación en la década de 1940.<br>
+                <strong>Construcción del Dique Ballester:</strong> En 1962, comenzó la construcción del Dique Ballester, que generó el Lago Pellegrini. La represa se inauguró en 1967 y permitió almacenar agua para riego, transformando el paisaje local.<br>
+                <strong>Nacimiento del Paraje:</strong> La creación del lago atrajo a nuevos pobladores que buscaban oportunidades. La disponibilidad de agua transformó las tierras áridas en terrenos cultivables.
+            </p>
+        
+            <p>
+                <strong>Hechos Salientes:</strong>
+                <ul>
+                    <li>Inauguración del Lago (1967).</li>
+                    <li>Desarrollo económico en las décadas de 1970 y 1980, centrado en la agricultura y ganadería.</li>
+                    <li>Crisis económica en la década de 2000, que llevó a nuevas iniciativas de diversificación económica, incluyendo el turismo.</li>
+                    <li>Reconocimiento turístico en el siglo XXI, con un creciente interés en actividades recreativas como la pesca deportiva y el avistamiento de aves.</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>6. Geografía</strong><br>
+                <strong>Naturaleza:</strong> Lago Pellegrini es un lugar rodeado de montañas y un arroyón, con una rica biodiversidad que incluye diversas especies de aves y fauna autóctona.<br>
+                <strong>Vegetación:</strong> La flora es típica de la estepa patagónica, con especies como el alpataco.<br>
+                <strong>Clima:</strong> El clima es predominantemente seco, con estaciones bien marcadas. Las temperaturas oscilan entre 25°C y 35°C en verano y 5°C a 15°C en invierno, con precipitaciones concentradas entre noviembre y marzo.
+            </p>
+        
+            <p>
+                <strong>7. Transporte</strong><br>
+                El balneario se conecta con la región por la ruta provincial N°1, con opciones de transporte público, incluidos colectivos y combis.
+            </p>
+        
+            <p>
+                <strong>8. Economía</strong><br>
+                <strong>Actividades Económicas:</strong> La principal actividad económica es el turismo, especialmente en alta temporada (diciembre a febrero). Los emprendedores locales ofrecen camping, restaurantes y cabañas. También se practica la ganadería, con cría de ovejas, chivos y algunas vacas.<br>
+                <strong>Recursos y Producción:</strong>
+                <ul>
+                    <li><strong>Naturales:</strong> Agua del lago, suelo fértil y biodiversidad.</li>
+                    <li><strong>Productos Obtenidos:</strong> Chivo, cordero, y algo de vaca. La pesca también es una actividad destacada en el lago.</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>9. Autores del Trabajo</strong><br>
+                <strong>Estudiantes:</strong> Vero Urrutia, Camila Oses<br>
+                <strong>Sede:</strong> Lago Pellegrini<br>
+                <strong>Tutor:</strong> Yanet Brusain<br>
+                <strong>Clase:</strong> 11 de Sociales
+            </p>
+        </div>
+        
+        
+
+        <div id="villallanquin" class="paraje">
+            <h3>Villa Llanquín</h3>
+            <img src="villa-llanquin-6.JPG" alt="Descripción de la imagen" style="width: 100%; height: auto;"/>
+            <p>
+                <strong>1. Descripción General del Paraje</strong><br>
+                Villa Llanquín es un paraje rural ubicado sobre la costa del Río Limay, en la provincia de Río Negro, Argentina. Su entorno natural y su creciente desarrollo turístico lo convierten en un destino atractivo, donde se pueden realizar actividades como pesca, senderismo y camping.
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa</strong><br>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> Pilcaniyeu<br>
+                <strong>Ruta:</strong> Acceso por la ruta nacional N.º 237.
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta</strong><br>
+                <strong>Coordenadas Geográficas:</strong><br>
+                <strong>Latitud:</strong> 40° 53' 44" S<br>
+                <strong>Longitud:</strong> 71° 02' 12" O<br>
+                <strong>Altitud:</strong> 1,050 m sobre el nivel del mar.
+            </p>
+        
+            <p>
+                <strong>4. Población</strong><br>
+                La población aproximada en Villa Llanquín es de 160 habitantes.
+            </p>
+        
+            <p>
+                <strong>5. Historia</strong><br>
+                <strong>Contexto Inicial:</strong> Antes de la fundación de Villa Llanquín, la región era una zona árida y escasamente poblada. En 1892, el Estado entregó tierras a Ignacio Llanquín, lo que marcó el inicio del asentamiento.<br>
+                <strong>Hechos Relevantes:</strong>
+                <ul>
+                    <li>Fundación de la escuela primaria, inicialmente proyectada como aldea escolar.</li>
+                    <li>Construcción de la balsa en 1946 y la pasarela peatonal en 1984, que mejoraron el acceso a la zona.</li>
+                    <li>Crecimiento poblacional gracias a la disponibilidad de agua y recursos.</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>6. Geografía</strong><br>
+                <strong>Naturaleza:</strong> Villa Llanquín se encuentra en el área natural protegida del Río Limay, rodeada de montañas y ríos, con rica biodiversidad, incluyendo diversas especies de aves y fauna autóctona.<br>
+                <strong>Vegetación:</strong> La flora incluye Maitén, Laura, Moye, Sauce y Chacay, típica de la estepa patagónica.<br>
+                <strong>Clima:</strong> El clima es seco, con temperaturas que oscilan entre 30 °C y 36 °C en verano, y de -12 °C a 5 °C en invierno, con precipitaciones concentradas entre noviembre y marzo.
+            </p>
+        
+            <p>
+                <strong>7. Transporte</strong><br>
+                El acceso a Villa Llanquín se realiza por la ruta nacional N.º 237 y caminos vecinales que conectan con la ruta N.º 23 y Corralito. Existen opciones de transporte público limitadas.
+            </p>
+        
+            <p>
+                <strong>8. Economía</strong><br>
+                <strong>Actividades Económicas:</strong> La economía local se basa principalmente en la cría de ganado ovino y caprino, así como en el creciente turismo, que ofrece actividades recreativas como rafting y pesca.<br>
+                <strong>Recursos y Producción:</strong>
+                <ul>
+                    <li><strong>Naturales:</strong> Agua del río Limay, suelo fértil y biodiversidad.</li>
+                    <li><strong>Productos Obtenidos:</strong> Producción de ovejas y cabras, así como pesca deportiva en el río.</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>9. Autores del Trabajo</strong><br>
+                <strong>Estudiantes:</strong> [Nombres de los estudiantes]<br>
+                <strong>Sede:</strong> Villa Llanquín<br>
+                <strong>Tutor:</strong> [Nombre del tutor]<br>
+                <strong>Clase:</strong> [Clase correspondiente]
+            </p>
+        </div>
+    
+        
+        
+        <div id="elmanso" class="paraje">
+            <h3>El Manso</h3>
+            <p>
+                <strong>1. Descripción General del Paraje</strong><br>
+                <img src="el manso (1).jpeg" alt="El Manso" style="width: 100%; height: auto;"/>
+                El Manso es un pequeño paraje de campo rodeado de montañas y ríos, conocido por su diversidad de paisajes y atractivo natural.
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa</strong><br>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> Bariloche
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta</strong><br>
+                <strong>Coordenadas Geográficas:</strong><br>
+                <strong>Longitud:</strong> -71.58<br>
+                <strong>Latitud:</strong> -41.5979
+            </p>
+        
+            <p>
+                <strong>4. Población</strong><br>
+                El Manso tiene alrededor de 683 habitantes, con una comunidad que se caracteriza por su cercanía y colaboración mutua.
+            </p>
+        
+            <p>
+                <strong>5. Historia</strong><br>
+                <strong>Fundación:</strong> La fecha precisa de la fundación se desconoce, ya que los pobladores llegaron y se instalaron de forma independiente.<br>
+                <strong>Poblamiento:</strong> A principios del siglo XX, entre 1885 y 1899, se registró la llegada de los primeros pobladores, siendo Santos Turra uno de los primeros en ingresar desde Cochamó. Muchos se establecieron en la parte norte del río Manso, motivados por la esperanza de ser propietarios de su propia tierra.
+            </p>
+        
+            <p>
+                <strong>Hechos Salientes:</strong>
+                <ul>
+                    <li>A mediados del siglo XIX, Argentina y Chile organizaron una estrategia para la ocupación definitiva de los espacios australes, lo que llevó a conflictos con los indígenas.</li>
+                    <li>Estos procesos resultaron en la reducción de la población indígena y su reubicación en territorios específicos.</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>6. Naturaleza</strong><br>
+                El Manso es un lugar atractivo por su entorno natural, con una variedad de paisajes, fauna y flora que atraen a turistas. El clima presenta cuatro estaciones bien marcadas, aunque el invierno suele ser lluvioso, provocando inundaciones en ocasiones.
+            </p>
+        
+            <p>
+                <strong>7. Transporte</strong><br>
+                La mayoría de los habitantes del paraje tienen autos y ofrecen transporte a quienes no disponen de medios. Además, hay un colectivo llamado "koko" que ingresa al paraje todos los miércoles por la mañana y regresa por la tarde.
+            </p>
+        
+            <p>
+                <strong>8. Actividades Económicas</strong><br>
+                La principal actividad económica en El Manso es el turismo, con opciones como camping, rafting, restaurantes y cabañas. Los propietarios de estos emprendimientos generan empleo para los habitantes del paraje, fomentando la colaboración entre la comunidad.
+            </p>
+        
+            <p>
+                <strong>9. Autores del Trabajo</strong><br>
+                <strong>Estudiantes:</strong> Lucía Soria, Milagros Henríquez, Ailén Calfu, Catalina Escobar, Ximena Monsalve, Milagros Montaño<br>
+                <strong>Curso:</strong> 5° año<br>
+                <strong>Clase:</strong> 11 - Ciencias Sociales
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="elcondor" class="paraje">
+            <h3>El Cóndor</h3>
+            <img src="elcondor.png" alt="Descripción de la imagen" style="width: 100%; height: auto;" />
+            
+            <p>
+                <strong>1. Descripción General del Paraje</strong><br>
+                El Cóndor es una pequeña villa balnearia agreste, ubicada en la provincia de Río Negro, Patagonia Argentina. Se encuentra en la costa del océano Atlántico, sobre la margen sur de la desembocadura del Río Negro, cerca de Viedma, la capital de la provincia.
+            </p>
+            
+            <p>
+                <strong>2. Ubicación Relativa</strong><br>
+                <strong>Continentes:</strong> América del Sur<br>
+                <strong>País:</strong> Argentina<br>
+                <strong>Región:</strong> Patagonia Norte<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Departamento:</strong> Adolfo Alsina
+            </p>
+            
+            <p>
+                <strong>3. Ubicación Absoluta</strong><br>
+                <strong>Coordenadas Geográficas:</strong><br>
+                <strong>Longitud:</strong> 62° 49’ 40’’<br>
+                <strong>Latitud:</strong> 41° 02’ 33’’
+            </p>
+            
+            <p>
+                <strong>4. Población</strong><br>
+                El Cóndor cuenta con aproximadamente 1,000 habitantes. El proceso de poblamiento comenzó como un centro de interés para la pesca, con familias principalmente italianas que venían de Viedma y Carmen de Patagones. Las tierras eran de propiedad privada, lo que generó una lucha judicial para poder comprar lotes legalmente.
+            </p>
+            
+            <p>
+                <strong>5. Fundación</strong><br>
+                <strong>Fecha:</strong> 22 de junio de 1920.<br>
+                <strong>Descripción:</strong> El balneario comenzó a poblarse con carpas y casillas de madera. El farmacéutico Javier Massini fue el principal impulsor de la colonización del lugar. Las primeras viviendas se construyeron entre 1913 y 1919, y en 1920 se autorizó la lotificación de las tierras de la familia Harrieta. El lugar fue conocido inicialmente como “Las Carpas”, luego “La Boca”, “Villa Mazzini” y finalmente “El Cóndor” en homenaje a un barco danés que encalló frente al faro.
+            </p>
+            
+            <p>
+                <strong>6. Hechos Salientes</strong>
+                <ul>
+                    <li>Inicio del transporte público.</li>
+                    <li>Origen como un pueblo de pescadores.</li>
+                    <li>Trazado y pavimentación de caminos.</li>
+                    <li>Inauguración del primer hotel "Achavil".</li>
+                    <li>Creación de la escuela hogar.</li>
+                    <li>Mayor colonia de loros barranqueros del mundo.</li>
+                    <li>Fiesta del Mar y El Acampante.</li>
+                    <li>Faro más antiguo de la Patagonia.</li>
+                    <li>Mirador "Ceferino".</li>
+                    <li>Observación de fauna autóctona y deportes de viento.</li>
+                </ul>
+            </p>
+            
+            <p>
+                <strong>7. Geografía</strong><br>
+                <strong>Naturaleza:</strong> El Cóndor es conocido por su variada población de aves, como churrinches y loros barranqueros. También se observan mamíferos como mara, liebre europea, vizcachas y zorros.<br>
+                <strong>Vegetación:</strong> Pertenece a la estepa patagónica, con monte bajo y escasos tamariscos, eucaliptos y siempre verdes. El paisaje incluye dunas, acantilados y restingas.
+            </p>
+            
+            <p>
+                <strong>8. Clima</strong><br>
+                El clima se caracteriza por el predominio del viento patagónico, con estaciones bien marcadas en cuanto a las temperaturas.
+            </p>
+            
+            <p>
+                <strong>9. Transporte</strong><br>
+                El balneario se conecta con Viedma por la ruta provincial N°1, con transporte público disponible en ocasiones.
+            </p>
+            
+            <p>
+                <strong>10. Economía</strong><br>
+                La principal actividad económica es el turismo, especialmente en alta temporada (diciembre a febrero). La ganadería también es una actividad presente.
+            </p>
+            
+            <p>
+                <strong>Recursos y Producción</strong><br>
+                <strong>Naturales:</strong> Pesca, playa y paisaje.<br>
+                <strong>Históricos y Culturales:</strong>
+                <ul>
+                    <li>Faro de Río Negro</li>
+                    <li>Memorial de Malvinas</li>
+                    <li>Mirador "Ceferino"</li>
+                    <li>Paseo de Artesanos</li>
+                    <li>Fiesta del Mar y El Acampante</li>
+                    <li>Casillas restauradas de los primeros pobladores.</li>
+                </ul>
+            </p>
+            
+            <p>
+                <strong>11. Autora del Trabajo</strong><br>
+                <strong>Alumna:</strong> Mora Paloma<br>
+                <strong>Sede:</strong> El Cóndor<br>
+                <strong>Curso:</strong> 5° año<br>
+                <strong>Tutora:</strong> Karen Seguí<br>
+                <strong>Fecha:</strong> 30/9/24
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+        <div id="valleverde" class="paraje">
+            <h3>Valle Verde</h3>
+            <img src="verde.webp" alt="Vista de Valle Verde, un paraje en Río Negro" style="width: 100%; height: auto;" />
+            <p>
+                <strong>1. Inicio</strong><br><br>
+                <strong>Descripción General del Paraje:</strong><br>
+                Valle Verde es un paraje tranquilo, rodeado de naturaleza, donde la vida es sencilla y en comunidad. Los niños crecen en un entorno saludable, alejados del uso excesivo de tecnología, y la relación entre vecinos se basa en la ayuda mutua. Aunque su población es pequeña, el lugar ofrece paz y un estilo de vida sereno.<br><br>
+                
+                <strong>2. Ubicación Relativa</strong><br><br>
+                - <strong>País:</strong> Argentina<br>
+                - <strong>Provincia:</strong> Río Negro<br>
+                - <strong>Departamento:</strong> General Roca<br>
+                - <strong>Región:</strong> Alto Valle<br>
+                - <strong>Río:</strong> Margen del Río Colorado, a 20 km del punto cuatripartito entre Río Negro, Neuquén, La Pampa y Mendoza.<br><br>
+                
+                <strong>3. Ubicación Absoluta</strong><br><br>
+                - <strong>Coordenadas Geográficas:</strong> Aprox. Latitud -38.9391, Longitud -67.8925<br>
+                - Ubicado sobre la Ruta Provincial N° 157, a 60 km de Catriel.<br><br>
+                
+                <strong>4. Población</strong><br><br>
+                - <strong>Cantidad de Habitantes:</strong> Entre 100 y 150 personas.<br>
+                - <strong>Composición Demográfica:</strong> El 75% de los habitantes son mayores de 50 años. Los jóvenes tienden a migrar por falta de empleo.<br>
+                - <strong>Residente Más Anciano:</strong> Un habitante, abuelo de un vecino, está por cumplir 88 años.<br><br>
+                
+                <strong>5. Historia</strong><br><br>
+                - <strong>Década de 1950:</strong> Fundado como estancia de 20,000 hectáreas, conocida como Valle Verde Sociedad Anónima.<br>
+                - <strong>1960:</strong> Adquirida por un propietario suizo; periodo de mayor esplendor, incluyendo una pista de avión.<br>
+                - <strong>1966:</strong> Declara quiebra y pasa al Banco Nación.<br>
+                - <strong>1975:</strong> La provincia de Río Negro transforma las tierras en la Colonia Valle Verde.<br>
+                - <strong>1976:</strong> Reapertura de la escuela 254 y adjudicación de parcelas a colonos.<br>
+                - <strong>1984:</strong> Inauguración de un nuevo edificio escolar.<br>
+                - <strong>Actualidad:</strong> Pérdida poblacional y desafíos para mantener la actividad comunitaria.<br><br>
+                
+                <strong>6. Geografía</strong><br><br>
+                - <strong>Naturaleza:</strong> Cultivos de alfalfa bajo riego del Río Colorado. Cortinas de álamos, eucaliptos, y pequeños bosques de pinos embellecen el paisaje. Las mesetas circundantes se usan para pastoreo de ganado.<br>
+                - <strong>Clima:</strong> Veranos calurosos (hasta 37°C), inviernos fríos (-5°C) con heladas nocturnas. El calor en primavera es agradable, pero los inviernos pueden ser severos.<br><br>
+                
+                <strong>7. Transporte</strong><br><br>
+                - <strong>Medios de Transporte:</strong> No hay transporte público. Los habitantes dependen de vehículos particulares o hacen dedo para viajar.<br>
+                - <strong>Estado de la Ruta:</strong> La Ruta Provincial N° 157 está en mal estado, dificultando el tránsito y el comercio.<br><br>
+                
+                <strong>8. Economía</strong><br><br>
+                - <strong>Ganadería:</strong> Crianza y comercialización de ganado vacuno, porcino y caprino.<br>
+                - <strong>Agricultura:</strong> Producción de alfalfa para la venta, empaquetada en fardos y rollos. La calidad del riego depende del caudal del Río Colorado.<br>
+                - <strong>Limitaciones:</strong> El mal estado de la ruta afecta negativamente la distribución de productos.<br><br>
+            </p>
+            <p>
+                <strong>9. Autores del Trabajo:</strong><br/>
+                Estudiantes ciclo Orientado<br/>
+               
+            </p>
+        </div>
+        
+
+        <div id="colanconhue" class="paraje">
+            <h3>Colan Conhue</h3>
+            <img src="colan-conhue.jpg" alt="Colan Conhue" style="width: 100%; height: auto;" />
+            <p>
+                <strong>1. Descripción General del Paraje:</strong><br>
+                Colan Conhue, cuyo nombre en idioma mapuche significa "aguas perdidas", es una pequeña localidad ubicada en la región de la Línea Sur de la provincia de Río Negro. Con una población aproximada de 113 a 160 habitantes, está situada en el Departamento 25 de Mayo, a 93 km al norte de Ingeniero Jacobacci. 
+            </p>
+        
+            <p>
+                <strong>2. Ubicación Relativa:</strong><br>
+                <strong>País:</strong> Argentina<br>
+                <strong>Provincia:</strong> Río Negro<br>
+                <strong>Región:</strong> Patagonia - Línea Sur<br>
+                <strong>Departamento:</strong> 25 de Mayo
+            </p>
+        
+            <p>
+                <strong>3. Ubicación Absoluta:</strong><br>
+                <strong>Coordenadas Geográficas:</strong> Latitud: -40.6675, Longitud: -69.1059, Altitud: 1131 metros
+            </p>
+        
+            <p>
+                <strong>4. Población:</strong><br>
+                Colan Conhue tiene entre 113 y 160 habitantes distribuidos en pequeños parajes como Colan Conhue Grande, Tromenco y Fita Ruin.
+            </p>
+        
+            <p>
+                <strong>5. Historia:</strong><br>
+                <strong>Fecha de Fundación:</strong> 1964<br>
+                La comunidad comenzó a formarse alrededor de la creación de la Escuela Hogar Nº216, siendo esta una de las instituciones más importantes de la localidad. Los vecinos celebran con entusiasmo el aniversario del paraje, manteniendo vivas las tradiciones.
+            </p>
+        
+            <p>
+                <strong>6. Naturaleza:</strong><br>
+                Colan Conhue se encuentra en la región de la Línea Sur, caracterizada por su altitud y clima árido. La vegetación es escasa, y el paisaje está dominado por montañas bajas y mesetas típicas de la Patagonia.
+            </p>
+        
+            <p>
+                <strong>7. Transporte:</strong><br>
+                El acceso a Colan Conhue se realiza principalmente por caminos rurales que conectan a la comunidad con localidades cercanas como Jacobacci. Los habitantes dependen principalmente de vehículos particulares.
+            </p>
+        
+            <p>
+                <strong>8. Actividades Económicas:</strong><br>
+                La principal actividad económica es la ganadería, destacándose la esquila y el mantenimiento de los campos. A nivel público, las instituciones como la escuela, el centro de salud y la Comisión de Fomento juegan un papel clave en el desarrollo local.
+            </p>
+        
+            <p>
+                <strong>9. Instituciones:</strong><br>
+                Colan Conhue cuenta con varias instituciones que prestan servicios esenciales a la comunidad:<br>
+                <ul>
+                    <li>Escuela Hogar Nº 216</li>
+                    <li>Comisión de Fomento</li>
+                    <li>Destacamento Policial</li>
+                    <li>Sala de Primeros Auxilios</li>
+                    <li>Sala de Usos Múltiples (SUM)</li>
+                    <li>Iglesias</li>
+                    <li>Escuela de Arte Popular del IUPA</li>
+                </ul>
+            </p>
+        
+            <p>
+                <strong>10. Autores del Trabajo:</strong><br>
+                Estudiante: Vilma Cabrera<br>
+                Curso: 5° año<br>
+
+            </p>
+        </div>
+        
+
+        <div id="blancuracentro" class="paraje">
+            <h3>Blancura Centro</h3>
+            <img src="blancura.png" alt="Descripción de la imagen" style="width: 100%; height: auto;" />
+            <p>
+                <strong>1. Descripción General del Paraje</strong><br>
+                Blancura Centro es un paraje de la Línea Sur en el departamento El Cuy, ubicado en la estepa patagónica a 250 km de San Carlos de Bariloche, 280 km de General Roca y a 40 km de la represa hidroeléctrica Piedra del Águila.<br><br>
+                
+                <strong>2. Ubicación Relativa</strong><br>
+                País: Argentina<br>
+                Provincia: Río Negro<br>
+                Departamento: El Cuy<br>
+                Región: Línea Sur<br><br>
+                
+                <strong>3. Ubicación Absoluta</strong><br>
+                Coordenadas Geográficas: [Por añadir si están disponibles]<br><br>
+                
+                <strong>4. Población</strong><br>
+                Blancura Centro cuenta con una población de 52 habitantes, de los cuales el 50% vive en el campo. En la aldea escolar reside el resto de la población durante el ciclo lectivo para poder escolarizar a sus hijos.<br><br>
+                
+                <strong>5. Historia</strong><br>
+                Fundación: Las familias Huachucura y Maliqueo fueron los primeros pobladores que se trasladaron para escolarizar a sus hijos. En 1942, el señor Pichumil cedió parte de su terreno para construir la aldea escolar y la escuela primaria N° 174.<br><br>
+                
+                Hechos Salientes: Cada 24 de junio se celebra el We Tripantu, la renovación del equilibrio de la naturaleza, un evento significativo para la comunidad mapuche.<br><br>
+                
+                <strong>6. Geografía</strong><br>
+                Naturaleza: Situada en la estepa patagónica, con suelos arenosos y rocosos. En los mallines se encuentran aguadas y arroyos.<br><br>
+                
+                Clima: Seco y árido, con temperaturas bajo cero durante el otoño e invierno. La nieve es frecuente, y los caminos son intransitables en invierno.<br><br>
+                
+                <strong>7. Transporte</strong><br>
+                Las formas de transporte disponibles son vehículos particulares, ya que no hay transporte público. Los pobladores suelen trasladarse a caballo y enfrentan dificultades en invierno por nieve y barro.<br><br>
+                
+                <strong>8. Economía</strong><br>
+                La principal actividad económica es la ganadería, con énfasis en la venta de carne y el acopio de lana en la época de esquila.<br><br>
+                
+                <strong>9. Autores del Trabajo</strong><br>
+                Estudiantes: Yènifer Carrilaf, Luján Laciár<br>
+                Sede: Blancura Centro<br>
+                Ciclo: 4° Año - Ciclo Orientado<br>
+                Materia: Ciencias Sociales y Humanidades<br>
+                Clase: 11 - La Wiki de Paraje
+            </p>
+        </div>
+        
+        
+    </div>
+</body>
+
+<footer>
+    <p>&copy; 2024 Wiki de Parajes de Río Negro. Todos los derechos reservados.</p>
+</footer>
+</html>
