@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikiparajes de Río Negro - ESRN Rural Virtual - Área de Ciencias Sociales y Humanidades</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f7ff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 2rem;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .audio-button {
+      background-color: #003366;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .audio-button:hover {
+      background-color: #3399cc;
+      transform: scale(1.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 2rem;
+    }
+
+    .grid a {
+      text-decoration: none;
+      background-color: #ffffff;
+      border: 2px solid #ccc;
+      padding: 1.2rem;
+      text-align: center;
+      border-radius: 15px;
+      transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+      font-weight: bold;
+      color: #003366;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grid a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #3399cc;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .grid a:hover {
+      transform: translateY(-5px);
+      background-color: #e6f7ff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid a:hover::before {
+      opacity: 0.2;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wikiparajes: La mirada estudiantil sobre Río Negro - Actualización 2025</h1>
+  </header>
+
+  <div class="container">
+    <div class="video-container">
+      <video autoplay loop muted playsinline>
+        <source src="mapa2025.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <audio id="musicaFondo" loop>
+      <source src="cancionRural.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <button id="playButton" class="audio-button">🎵 Reproducir Música</button>
+
+    <script>
+      document.getElementById("playButton").addEventListener("click", function() {
+        var audio = document.getElementById("musicaFondo");
+        audio.play().catch(error => console.log("Error al reproducir:", error));
+      });
+    </script>
+
+    <div class="grid">
+      <a href="AguadaCecilio.html">Aguada Cecilio</a>
+      <a href="aguadaGuzman.html">Aguada Guzman</a>
+      <a href="AGuerra.html">Aguada de Guerra</a>
+      <a href="ArroyoBerros.html">Arroyo los Berros</a>
+      <a href="Blancura.html">Blancura Centro</a>
+      <a href="Cerro.html">Cerro Policia</a>
+      <a href="Chelforo.html">Chelforó</a>
+      <a href="Colan.html">Colan Cohnué</a>
+      <a href="Comico.html">Comicó</a>
+      <a href="Conaniyeu.html">Cona Niyeu</a>
+      <a href="Corralito.html">Corralito</a>
+      <a href="ElCain.html">El Cain</a>
+      <a href="ElCondor.html">El Cóndor</a>
+      <a href="ElManso.html">El Manso</a>
+      <a href="Lago.html">Lago Pellegrini</a>
+      <a href="laguna.html">Laguna Blanca</a>
+      <a href="choique.html">Mamuel Choique</a>
+      <a href="Mencue.html">Mencué</a>
+      <a href="Naupa.html">Naupa Huen</a>
+      <a href="RioChico.html">Rio Chico</a>
+      <a href="Paileman.html">Sierra Pailemán</a>
+      <a href="pblancas.html">Peñas Blancas</a>
+      <a href="valleverde.html">Valle Verde</a>
+      <a href="llanquin.html">Villa Llanquín</a>
+      <a href="Treneta.html">Treneta</a>
+      <a href="Yaminnue.html">Yaminué</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 - Todos los derechos reservados. Prof. y Lic. María Laura Yunes – Especialista en TIC y Desarrolladora Web. Área de Ciencias Sociales y Humanidades - ESRN Rural Virtual
+  </footer>
+  
+</body>
+</html>
+

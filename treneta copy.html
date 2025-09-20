@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Información detallada sobre Rincón Treneta, paraje de Río Negro - Proyecto estudiantil ESRN Rural Virtual">
+  <title>Rincón Treneta - Wikiparajes de Río Negro</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #3a5a78;
+      --secondary-color: #2d4d6b;
+      --accent-color: #e9b44c;
+      --light-bg: #f5f5f5;
+      --dark-text: #333;
+      --light-text: #fff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Header con efecto parallax */
+    header {
+      background: linear-gradient(rgba(58, 90, 120, 0.8), rgba(58, 90, 120, 0.8)), 
+                  url('https://images.unsplash.com/photo-1516600330160-4c8c1f1e1d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: var(--light-text);
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      box-shadow: var(--shadow);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>') bottom center no-repeat;
+      background-size: 1200px 100%;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--secondary-color);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin: 2rem 0 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--primary-color);
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      margin: 1rem 0;
+      color: var(--secondary-color);
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    /* Sección de información */
+    .info-section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .info-section:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+
+    /* Imágenes */
+    .img-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+
+    .img-card {
+      flex: 1 1 300px;
+      max-width: 500px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .img-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .img-caption {
+      padding: 1rem;
+      background-color: white;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Controles de audio */
+    .audio-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3rem 0;
+      gap: 1rem;
+    }
+
+    .audio-button {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+    }
+
+    .audio-button:hover {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 51, 102, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--light-text);
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%232d4d6b" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%232d4d6b" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%232d4d6b"/></svg>') bottom center no-repeat;
+      background-size: 1200px 100%;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--light-text);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    /* Modo oscuro/claro */
+    .modo-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modo-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .dark-mode {
+      --light-bg: #1a1a2e;
+      --dark-text: #f0f0f0;
+      --secondary-color: #2c786c;
+      background-color: #16213e;
+      color: #f0f0f0;
+    }
+
+    .dark-mode .info-section {
+      background-color: #1a1a2e;
+      color: #f0f0f0;
+    }
+
+    .dark-mode .img-caption {
+      background-color: #1a1a2e;
+      color: #ccc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .container {
+        padding: 0 1rem;
+        margin: 2rem auto;
+      }
+      
+      .info-section {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Estilos específicos para Rincón Treneta */
+    .key-facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .fact-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .fact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .fact-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--secondary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -10px;
+    }
+
+    .artisan-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .artisan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .artisan-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="toggleModo()" class="modo-btn">
+    <i class="fas fa-moon"></i> Modo Oscuro
+  </button>
+
+  <header>
+    <h1>Rincón Treneta</h1>
+    <p>Un valle de tradiciones en la meseta patagónica</p>
+  </header>
+
+  <div class="container">
+    <section class="info-section">
+      <h2>Descripción General</h2>
+      <p>Rincón Treneta es un paraje ubicado al pie de la Meseta de Somuncurá en un valle pintoresco, surcado por un arroyo que nace de varias vertientes de la meseta. Su nombre proviene del günün a yajüch (idioma del Pueblo Günün a küna o tehuelches) de "trünü" (silla de montar) y "ta" (donde hay), formando "trünüta", que significa "donde hay una silla de montar", en referencia a la forma del cerro local.</p>
+      
+      <div class="img-container">
+        <div class="img-card">
+          <img src="treneta.gif" alt="Rincón Treneta">
+          <div class="img-caption">Vista panorámica del valle de Rincón Treneta</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Datos Clave</h2>
+      <div class="key-facts">
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Población</h3>
+          <p>110 habitantes</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Ubicación</h3>
+          <p>Departamento 9 de Julio</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-mountain"></i>
+          </div>
+          <h3>Relieve</h3>
+          <p>Valle al pie de Somuncurá</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Fundación</h3>
+          <p>1884 (aproximadamente)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Ubicación</h2>
+      <h3>Ubicación Relativa</h3>
+      <ul>
+        <li><strong>País:</strong> Argentina</li>
+        <li><strong>Provincia:</strong> Río Negro</li>
+        <li><strong>Departamento:</strong> 9 de Julio</li>
+        <li><strong>Región:</strong> Meseta de Somuncurá</li>
+      </ul>
+      
+      <h3>Ubicación Absoluta</h3>
+      
+      <div class="location-container" style="margin: 25px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+        <!-- Encabezado -->
+        <div style="background: #2c5282; padding: 12px; text-align: center;">
+          <h3 style="color: white; margin: 0; font-size: 1.4em; font-weight: 500;">Rincón Treneta, Río Negro</h3>
+        </div>
+
+        <!-- Clima -->
+        <div style="background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%); padding: 15px; color: white; display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <img id="weather-icon-treneta" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Clima" style="width: 50px; filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));">
+            <div>
+              <div style="font-size: 1.8em; font-weight: 600; line-height: 1;">--°C</div>
+              <div style="font-size: 0.9em; margin-top: 5px;">Clima árido patagónico</div>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 0.85em;">
+            <div><i class="fas fa-tint"></i> Humedad: <span id="humidity-treneta">--%</span></div>
+            <div><i class="fas fa-wind"></i> Viento: <span id="wind-treneta">-- km/h</span></div>
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890123456!2d-66.981684693!3d-40.850827743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3b3d3d3d3d3d3%3A0x5d3e5a9c1a1f3b1a!2sRinc%C3%B3n%20Treneta%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar&zoom=12&markers=color:0x4A89DC%7C-40.850827743,-66.981684693"
+          width="100%"
+          height="300"
+          style="border: none;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Mapa de Rincón Treneta">
+        </iframe>
+
+        <!-- Información -->
+        <div style="padding: 15px; background: #f8fafc;">
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Departamento:</div>
+              <div>9 de Julio</div>
+            </div>
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Coordenadas:</div>
+              <div>-40.850827743° S, -66.981684693° O</div>
+            </div>
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Altitud:</div>
+              <div>~800 msnm</div>
+            </div>
+            <div style="display: flex;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Característica:</div>
+              <div>Valle al pie de la Meseta de Somuncurá</div>
+            </div>
+          </div>
+
+          <!-- Etiquetas -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+            <span style="background: #e53e3e; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-home" style="margin-right: 5px;"></i> Paraje
+            </span>
+            <span style="background: #38a169; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-mountain" style="margin-right: 5px;"></i> Meseta
+            </span>
+            <span style="background: #805ad5; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-horse" style="margin-right: 5px;"></i> Tradición
+            </span>
+            <span style="background: #d69e2e; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-tractor" style="margin-right: 5px;"></i> Agropecuario
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Historia</h2>
+      <p>Rincón Treneta tiene sus orígenes en el pueblo tehuelche que habitaba la región mucho antes de la llegada de los colonos. Aunque no se conoce una fecha exacta de fundación, se habla de 1884 como el aniversario, cuando varias familias se asentaron en el valle, desarrollando actividades agropecuarias.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Época precolombina</h3>
+            <p>Habitado por el pueblo tehuelche (Günün a küna)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1884</h3>
+            <p>Llegada de colonos y desarrollo de actividades agropecuarias</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Siglo XX</h3>
+            <p>Consolidación de la comunidad con tradiciones gauchescas</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Actualidad</h3>
+            <p>Preservación de las tradiciones con fiestas aniversario y destrezas criollas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Población</h2>
+      <ul>
+        <li><strong>Total habitantes:</strong> 110</li>
+        <li><strong>Características:</strong> Comunidad rural que mantiene vivas las tradiciones gauchescas</li>
+        <li><strong>Fiesta aniversario:</strong> En febrero con asado popular gratuito y destrezas criollas</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Geografía y Naturaleza</h2>
+      <h3>Relieve</h3>
+      <p>Valle pintoresco al pie de la Meseta de Somuncurá, surcado por un arroyo que nace de varias vertientes de la meseta.</p>
+      
+      <h3>Clima</h3>
+      <p>Seco y frío, con precipitaciones escasas a lo largo del año, lo que influye en la vida diaria de sus habitantes.</p>
+      
+      <h3>Flora y Fauna</h3>
+      <p>Vegetación típica de la estepa patagónica con plantas como neneo, coirón y leña de vaca, mientras que en el valle la vegetación es más intensa.</p>
+      
+      <div class="img-container">
+        <div class="img-card">
+          <img src="treneta-paisaje.jpg" alt="Paisaje de Rincón Treneta">
+          <div class="img-caption">Vista del valle y la meseta en Rincón Treneta</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Transporte</h2>
+      <ul>
+        <li><strong>Acceso:</strong> Principalmente por rutas provinciales</li>
+        <li><strong>Transporte público:</strong> No hay servicio regular</li>
+        <li><strong>Movilidad:</strong> Los habitantes usan vehículos particulares para desplazarse</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Economía y Cultura</h2>
+      <h3>Actividades Económicas</h3>
+      <ul>
+        <li>Agricultura y cría de ganado vacuno</li>
+        <li>Actividades agropecuarias tradicionales</li>
+      </ul>
+      
+      <h3>Tradiciones</h3>
+      <p>La comunidad mantiene vivas las costumbres gauchescas, especialmente durante su fiesta aniversario en febrero, con un gran asado popular gratuito y destrezas criollas con jineteada, donde muchos tropilleros exhiben su caballada.</p>
+      
+      <div class="img-container">
+        <div class="artisan-card">
+          <div class="artisan-icon">
+            <i class="fas fa-horse"></i>
+          </div>
+          <h3>Tradiciones Gauchescas</h3>
+          <p>Jineteada y destrezas criollas</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Autores del Trabajo</h2>
+      <p>Estudiantes de la ESRN Rural Virtual:</p>
+      <ul>
+        <li>[Nombre del estudiante 1]</li>
+        <li>[Nombre del estudiante 2]</li>
+        <li>[Nombre del estudiante 3]</li>
+        <li>[Nombre del estudiante 4]</li>
+        <li>[Nombre del estudiante 5]</li>
+        <li>[Nombre del estudiante 6]</li>
+      </ul>
+      <p><strong>Curso:</strong> 5° año - Clase 11 - Ciencias Sociales</p>
+    </section>
+
+    <div class="audio-controls" id="tts-controls">
+      <button onclick="toggleListen()" class="audio-button" id="listen-btn">
+        <i class="fas fa-volume-up"></i> Escuchar Texto
+      </button>
+      <div style="display: flex; gap: 1rem;">
+        <button onclick="pauseSpeech()" class="audio-button">
+          <i class="fas fa-pause"></i> Pausar
+        </button>
+        <button onclick="resumeSpeech()" class="audio-button">
+          <i class="fas fa-play"></i> Reanudar
+        </button>
+      </div>
+    </div>
+  </div>
+
+   <footer>
+    <div class="footer-content">
+      <h3>Wikiparajes de Río Negro</h3>
+      <p>Proyecto educativo de la ESRN Rural Virtual</p>
+      <p>Área de Ciencias Sociales y Humanidades</p>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2025 - Todos los derechos reservados. Prof. y Lic. María Laura Yunes – Especialista en TIC y Desarrolladora Web.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Modo oscuro/claro
+    function toggleModo() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector('.modo-btn');
+      if (document.body.classList.contains("dark-mode")) {
+        btn.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+      } else {
+        btn.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+      }
+    }
+
+    // Text-to-speech mejorado
+    let isListening = false;
+    let speechSynthesis = window.speechSynthesis;
+    let utterance;
+    
+    function toggleListen() {
+      const btn = document.getElementById("listen-btn");
+      
+      if (!isListening) {
+        // Detener cualquier reproducción previa
+        speechSynthesis.cancel();
+        
+        // Obtener todo el texto de la página
+        const mainContent = document.querySelector('.container');
+        const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
+        
+        // Crear nueva utterance
+        utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'es-AR';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        
+        // Evento cuando termina la reproducción
+        utterance.onend = () => {
+          isListening = false;
+          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+        };
+        
+        // Evento si hay error
+        utterance.onerror = (event) => {
+          console.error('Error en speechSynthesis:', event);
+          isListening = false;
+          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+          alert('Error al intentar leer el texto. Por favor intente nuevamente.');
+        };
+        
+        // Iniciar reproducción
+        speechSynthesis.speak(utterance);
+        isListening = true;
+        btn.innerHTML = '<i class="fas fa-stop"></i> Detener';
+      } else {
+        speechSynthesis.cancel();
+        isListening = false;
+        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+      }
+    }
+    
+    function pauseSpeech() {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+      }
+    }
+    
+    function resumeSpeech() {
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+      }
+    }
+
+    // Función para obtener datos del clima (simulada)
+    function getWeather() {
+      // En una implementación real, aquí se haría una llamada a una API de clima
+      document.getElementById('weather-icon-penhasblancas').src = 'https://openweathermap.org/img/wn/01d@2x.png';
+      document.querySelector('#weather-icon-penhasblancas + div > div').textContent = '28°C';
+      document.getElementById('humidity-penhasblancas').textContent = '30%';
+      document.getElementById('wind-penhasblancas').textContent = '20 km/h';
+    }
+
+    // Llamar a la función del clima cuando la página cargue
+    window.addEventListener('load', getWeather);
+  </script>
+</body>
+</html>

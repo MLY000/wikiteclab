@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Información detallada sobre Peñas Blancas, paraje de Río Negro - Proyecto estudiantil ESRN Rural Virtual">
+  <title>Peñas Blancas - Wikiparajes de Río Negro</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+ 
+  <header>
+    <h1>Peñas Blancas</h1>
+    <p>Colonia agrícolo-ganadera en el norte de Río Negro</p>
+  </header>
+
+  <div class="container">
+    <section class="info-section">
+      <h2>Descripción General</h2>
+      <p>Peñas Blancas, también conocida como Colonia Peñas Blancas o Piedra Blanca, es una localidad y comisión de fomento ubicada al extremo norte de la provincia de Río Negro, en el departamento General Roca. Esta colonia agrícolo-ganadera se encuentra a 35 kilómetros de la ciudad de Catriel, en una zona de producción petrolera, y a 20 kilómetros de 25 de Mayo, en la provincia de La Pampa.</p>
+      
+      <div class="img-container">
+        <div class="img-card">
+          <img src="pbcas.gif" alt="Peñas Blancas">
+          <div class="img-caption">Vista panorámica de Peñas Blancas y su entorno rural</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Datos Clave</h2>
+      <div class="key-facts">
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Población</h3>
+          <p>Comunidad pequeña</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Altitud</h3>
+          <p>~500 msnm</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-tractor"></i>
+          </div>
+          <h3>Actividad</h3>
+          <p>Agrícola-ganadera</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">
+            <i class="fas fa-flag"></i>
+          </div>
+          <h3>Fundación</h3>
+          <p>1879</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Ubicación</h2>
+      <h3>Ubicación Relativa</h3>
+      <ul>
+        <li><strong>País:</strong> Argentina</li>
+        <li><strong>Provincia:</strong> Río Negro</li>
+        <li><strong>Departamento:</strong> General Roca</li>
+        <li><strong>Región:</strong> Norte de la Patagonia</li>
+        <li><strong>Distancia a Valle Verde:</strong> 15 km</li>
+      </ul>
+      
+      <h3>Ubicación Absoluta</h3>
+      
+      <div class="location-container" style="margin: 25px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+        <!-- Encabezado -->
+        <div style="background: #2c5282; padding: 12px; text-align: center;">
+          <h3 style="color: white; margin: 0; font-size: 1.4em; font-weight: 500;">Peñas Blancas, Río Negro</h3>
+        </div>
+
+        <!-- Clima -->
+        <div style="background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%); padding: 15px; color: white; display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <img id="weather-icon-penhasblancas" src="https://openweathermap.org/img/wn/01d@2x.png" alt="Clima" style="width: 50px; filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));">
+            <div>
+              <div style="font-size: 1.8em; font-weight: 600; line-height: 1;">--°C</div>
+              <div style="font-size: 0.9em; margin-top: 5px;">Clima árido continental</div>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 0.85em;">
+            <div><i class="fas fa-tint"></i> Humedad: <span id="humidity-penhasblancas">--%</span></div>
+            <div><i class="fas fa-wind"></i> Viento: <span id="wind-penhasblancas">-- km/h</span></div>
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12089.456789012345!2d-67.7833!3d-40.1333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95fa0b8a7f3d3d3d%3A0x6d9e5a9c1a1f3b1a!2sPe%C3%B1as%20Blancas%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar&zoom=12&markers=color:0x4A89DC%7C-40.1333,-67.7833"
+          width="100%"
+          height="300"
+          style="border: none;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Mapa de Peñas Blancas">
+        </iframe>
+
+        <!-- Información -->
+        <div style="padding: 15px; background: #f8fafc;">
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Departamento:</div>
+              <div>General Roca</div>
+            </div>
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Coordenadas:</div>
+              <div>-39.0163° S, -67.5905° O</div>
+            </div>
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Altitud:</div>
+              <div>~500 msnm</div>
+            </div>
+            <div style="display: flex; margin-bottom: 8px;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Ruta:</div>
+              <div>Provincial N° 57</div>
+            </div>
+            <div style="display: flex;">
+              <div style="min-width: 100px; font-weight: 600; color: #4a5568;">Característica:</div>
+              <div>Formación rocosa calcárea de color blanco, visible desde lejos en la meseta</div>
+            </div>
+          </div>
+
+          <!-- Etiquetas -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+            <span style="background: #e53e3e; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-mountain" style="margin-right: 5px;"></i> Hito geológico
+            </span>
+            <span style="background: #38a169; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-map-marked-alt" style="margin-right: 5px;"></i> Punto de referencia
+            </span>
+            <span style="background: #805ad5; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-road" style="margin-right: 5px;"></i> Ruta Provincial 57
+            </span>
+            <span style="background: #d69e2e; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; display: inline-flex; align-items: center;">
+              <i class="fas fa-wind" style="margin-right: 5px;"></i> Zona ventosa
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="img-container">
+        <div class="img-card">
+          <img src="peñasruta.webp" alt="Peñas Blancas">
+          <div class="img-caption">https://rionegro.gov.ar/articulo/20406/vialidad-rionegrina-mejora-la-ruta-57-en-penas-blancas</div>
+        </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Historia</h2>
+      <p>Peñas Blancas fue fundado en 1879 como parte de un proceso de colonización agrícola. Las primeras familias llegaron atraídas por tierras fértiles, impulsando la agricultura y la ganadería. En 1976, una gran inundación marcó un hito en la comunidad, afectando su infraestructura pero fortaleciendo su resiliencia.</p>
+      
+      <h3>Primeros Habitantes</h3>
+      <p>Entre los primeros pobladores se encontraban: Ambrosio Suárez, Alberto Navarro, Isidro Rivero, Ángela Rivero, Nicolás Rivero, Demetria Riquelme, Jacinta Riquelme, Faustino Fernández, Disiderio Fernández, Ezequiel Flores, Berto Flores, Roberta Gonzales, Domingo Moyano, Angel Rivero, Victor Maggioni, Sipriana Arangue, Juan Carte, Lola Navarro, Filiciana Mulé, Hugo Rodríguez, Enrique Manrique, Juan Opazo, Sergio Muñoz, Valentín Gonzales, Dolores Pereira, Mario Arangue y Oscar Cardena.</p>
+      
+      <h3>Datos Históricos Relevantes</h3>
+      <ul>
+        <li><strong>Primer Comisionado:</strong> Sánchez Carrillo, elegido por el gobierno de turno. Posteriormente todos los comisionados fueron elegidos por votos populares.</li>
+        <li><strong>Viñedo:</strong> Dejó de producir vino en 2005.</li>
+        <li><strong>Correo Argentino:</strong> Dejó de funcionar en 2003.</li>
+        <li><strong>Transporte Público:</strong> Dejó de funcionar en 1990.</li>
+      </ul>
+      <div class="img-container">
+        <div class="img-card">
+          <img src="peññññññ.jpg" alt="Peñas Blancas">
+          <div class="img-caption">https://www.estanciascampos.com.ar/w/Pag749/154PenasBlancas-RN.htm</div>
+        </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1879</h3>
+            <p>Fundación del paraje Peñas Blancas (Piedra Blanca)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1950s</h3>
+            <p>Desarrollo inicial de la agricultura y ganadería</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1976</h3>
+            <p>Gran inundación que afectó a la comunidad</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>1990</h3>
+            <p>Cese del transporte público</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>2003</h3>
+            <p>Cierre del Correo Argentino</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>2005</h3>
+            <p>Cese de producción del viñedo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+  <div class="img-container">
+  <div class="img-card">
+    <img src="penias.jpeg" alt="Peñas Blancas">
+    <div class="img-caption">
+      Peñas Blancas
+    </div>
+  </div>
+</div>
+
+      <h2>Población</h2>
+      <ul>
+        <li><strong>Características:</strong> Comunidad rural pequeña y unida</li>
+        <li><strong>Origen:</strong> Familias llegadas durante la colonización agrícola</li>
+        <li><strong>Estilo de vida:</strong> Principalmente dedicado a actividades agropecuarias</li>
+        <li><strong>Actividad económica:</strong> Incluye la cría de ganado caprino</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Geografía y Naturaleza</h2>
+      <h3>Relieve</h3>
+      <p>La región presenta paisajes rurales con vastas tierras áridas, pastizales y áreas agrícolas. La formación rocosa que da nombre al paraje es un hito geológico visible desde lejos.</p>
+      
+      <h3>Clima</h3>
+      <p>Clima árido y continental, con veranos cálidos (hasta 40 °C) e inviernos fríos (hasta -5 °C). Las precipitaciones son escasas y se concentran en primavera y otoño.</p>
+      
+      <h3>Flora</h3>
+      <p>Vegetación adaptada a la aridez, que incluye alpatacos, cardos, cola de caballo, totora, buganvilia, jarrilla y pata de loro.</p>
+      
+      <h3>Fauna</h3>
+      <p>La fauna local incluye piches, liebres, tortugas, teros, horneros, vacas, chivas, caballos, martinetas, flamencos, patos silvestres, jabalíes, chimangos, benteveos, cotorras, pájaros carpinteros, cernícalos, zorrinos, zorros, nutrias, víboras de coral y cascabel.</p>
+      
+      <div class="img-container">
+        <div class="img-card">
+          <img src="peñas.webp" alt="Formación geológica de Peñas Blancas">
+          <div class="img-caption">Paisaje característico del paraje</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Transporte</h2>
+      <ul>
+        <li><strong>Conexiones:</strong> Caminos rurales que facilitan el acceso</li>
+        <li><strong>Ruta Provincial:</strong> N° 57 atraviesa el paraje</li>
+        <li><strong>Distancia a Catriel:</strong> 35 km</li>
+        <li><strong>Distancia a 25 de Mayo (La Pampa):</strong> 20 km</li>
+        <li><strong>Distancia a Valle Verde:</strong> 15 km</li>
+        <li><strong>Movilidad:</strong> Principalmente vehículos particulares</li>
+      </ul>
+    </section>
+
+    <section class="info-section">
+      <h2>Economía y Cultura</h2>
+      <h3>Actividades Económicas</h3>
+      <ul>
+        <li>Agricultura (frutas y hortalizas)</li>
+        <li>Ganadería (ovina, bovina y caprina)</li>
+        <li>Actividades relacionadas con la producción petrolera cercana</li>
+      </ul>
+      
+      <h3>Características Culturales</h3>
+      <p>Comunidad rural con tradiciones arraigadas en la vida agropecuaria. Eventos locales que reflejan la identidad de los colonos, incluyendo fiestas regionales, eventos de música y danza, y exposiciones artísticas.</p>
+      
+      <div class="img-container">
+        <div class="agriculture-card">
+          <div class="agriculture-icon">
+            <i class="fas fa-tractor"></i>
+          </div>
+          <h3>Agricultura</h3>
+          <p>Cultivos de frutas y hortalizas</p>
+        </div>
+        <div class="agriculture-card">
+          <div class="agriculture-icon">
+            <i class="fas fa-horse"></i>
+          </div>
+          <h3>Ganadería</h3>
+          <p>Cría de ganado ovino, bovino y caprino</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Patrimonios, Atractivos y Recursos Turísticos</h2>
+      
+      <h3>Naturales</h3>
+      <ul>
+        <li>Bosques, ríos, montañas y senderos para actividades al aire libre</li>
+      </ul>
+      
+      <h3>Culturales</h3>
+      <ul>
+        <li>Fiestas regionales</li>
+        <li>Eventos de música y danza</li>
+        <li>Exposiciones artísticas</li>
+      </ul>
+      
+      <h3>Actividades Turísticas/Recreativas</h3>
+      <ul>
+        <li><strong>Senderismo:</strong> Por paisajes naturales de la zona</li>
+        <li><strong>Pesca:</strong> En los ríos y lagos de la zona, actividad popular entre turistas</li>
+        <li><strong>Avistaje de aves:</strong> Para observar la fauna local y diferentes especies de aves</li>
+      </ul>
+      
+      <h3>Productos Turísticos Locales</h3>
+      <ul>
+        <li>Turismo Rural</li>
+        <li>Ecoturismo</li>
+        <li>Turismo Aventura</li>
+        <li>Turismo Deportivo</li>
+      </ul>
+      
+      <h3>Servicios Gastronómicos</h3>
+      <p>Existen almacenes y despensas locales que ofrecen comidas típicas preparadas por los habitantes locales.</p>
+      
+      <h3>Servicios de Alojamiento</h3>
+      <p>Los visitantes pueden alojarse en casas particulares de familias locales, o bien acceder a ciudades cercanas como Cipolletti y General Roca que ofrecen más opciones de hospedaje.</p>
+    </section>
+
+    <section class="info-section">
+      <h2>Educación y Comunidad</h2>
+      <p>Peñas Blancas forma parte de los 26 parajes de la ESRN Rural Virtual, compartiendo el acceso a la educación a través de la virtualidad como elemento común con las demás comunidades.</p>
+      
+      <h3>Reflexión sobre Identidad</h3>
+      <p>La historia y geografía influyen en la identidad del paraje a través de sus raíces y los factores que moldean el entorno. En lo geográfico, influye en la economía como forma de definir la actividad laboral de la comunidad.</p>
+    </section>
+
+    
+
+    <div class="audio-controls" id="tts-controls">
+      <button onclick="toggleListen()" class="audio-button" id="listen-btn">
+        <i class="fas fa-volume-up"></i> Escuchar Texto
+      </button>
+      <div style="display: flex; gap: 1rem;">
+        <button onclick="pauseSpeech()" class="audio-button">
+          <i class="fas fa-pause"></i> Pausar
+        </button>
+        <button onclick="resumeSpeech()" class="audio-button">
+          <i class="fas fa-play"></i> Reanudar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <h3>Wikiparajes de Río Negro</h3>
+      <p>Proyecto educativo de la ESRN Rural Virtual</p>
+      <p>Área de Ciencias Sociales y Humanidades</p>
+      
+    
+      
+      <p style="margin-top: 2rem; font-size: 0.7rem;">&copy; 2025 - Todos los derechos reservados. Prof. y Lic. María Laura Yunes – Especialista en TIC y Desarrolladora Web.</p>
+    </div>
+  </footer>
+<!-- Coloca este botón donde prefieras en tu página, por ejemplo al inicio o al final -->
+<button onclick="window.location.href='index.html'" class="volver-btn">
+  <i class="fas fa-home"></i> Volver al Inicio
+</button>
+
+<style>
+  /* Estilos para el botón */
+  .volver-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c5282;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  
+  .volver-btn:hover {
+    background-color: #1a365d;
+  }
+  
+  .volver-btn i {
+    margin-right: 8px;
+  }
+</style>
+  <script>
+    // Modo oscuro/claro
+    function toggleModo() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector('.modo-btn');
+      if (document.body.classList.contains("dark-mode")) {
+        btn.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+      } else {
+        btn.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+      }
+    }
+
+    // Text-to-speech mejorado
+    let isListening = false;
+    let speechSynthesis = window.speechSynthesis;
+    let utterance;
+    
+    function toggleListen() {
+      const btn = document.getElementById("listen-btn");
+      
+      if (!isListening) {
+        // Detener cualquier reproducción previa
+        speechSynthesis.cancel();
+        
+        // Obtener todo el texto de la página
+        const mainContent = document.querySelector('.container');
+        const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
+        
+        // Crear nueva utterance
+        utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'es-AR';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        
+        // Evento cuando termina la reproducción
+        utterance.onend = () => {
+          isListening = false;
+          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+        };
+        
+        // Evento si hay error
+        utterance.onerror = (event) => {
+          console.error('Error en speechSynthesis:', event);
+          isListening = false;
+          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+          alert('Error al intentar leer el texto. Por favor intente nuevamente.');
+        };
+        
+        // Iniciar reproducción
+        speechSynthesis.speak(utterance);
+        isListening = true;
+        btn.innerHTML = '<i class="fas fa-stop"></i> Detener';
+      } else {
+        speechSynthesis.cancel();
+        isListening = false;
+        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
+      }
+    }
+    
+    function pauseSpeech() {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+      }
+    }
+    
+    function resumeSpeech() {
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+      }
+    }
+
+    // Función para obtener datos del clima (simulada)
+    function getWeather() {
+      // En una implementación real, aquí se haría una llamada a una API de clima
+      document.getElementById('weather-icon-penhasblancas').src = 'https://openweathermap.org/img/wn/01d@2x.png';
+      document.querySelector('#weather-icon-penhasblancas + div > div').textContent = '28°C';
+      document.getElementById('humidity-penhasblancas').textContent = '30%';
+      document.getElementById('wind-penhasblancas').textContent = '20 km/h';
+    }
+
+    // Llamar a la función del clima cuando la página cargue
+    window.addEventListener('load', getWeather);
+  </script>
+</body>
+</html>
