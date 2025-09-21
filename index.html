@@ -5,1180 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Interdisciplinario | Ciencias Sociales y Humanidades + Turismo</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom CSS -->
-  <style>
-    :root {
-  --primary-dark: #1a1a1a;
-  --gold: #d4af37;
-  --gold-light: #e6c667;
-  --shadow: 0 4px 6px rgba(0,0,0,0.1);
-  --transition: all 0.3s ease;
-
-      --primary: #2c3e50;
-  
-      --secondary: #3498db;
-      --secondary-light: #5dade2;
-      --accent: #e74c3c;
-      --accent-light: #ec7063;
-      --light: #f8f9fa;
-      --light-gray: #ecf0f1;
-      --dark: #2c3e50;
-      --dark-gray: #7f8c8d;
-    
-
-      --shadow-sm: 0 4px 6px rgba(0,0,0,0.1);
-
-      --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
-      --shadow-inset: inset 0 2px 4px rgba(0,0,0,0.05);
-      --border-radius: 12px;
-      --border-radius-lg: 16px;
-    }
-    
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--dark);
-      background-color: var(--light);
-      line-height: 1.7;
-      scroll-behavior: smooth;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-    
-    p {
-      font-size: 1.1rem;
-      color: var(--dark-gray);
-    }
-    
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      min-height: 700px;
-      background: linear-gradient(145deg, var(--primary-dark), var(--primary));
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      padding: 0 2rem;
-    }
-    
-    .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      animation: fadeInUp 1s ease;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      line-height: 1.2;
-      background: linear-gradient(45deg, var(--light), var(--gold-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
-    }
-    
-    .hero p {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.9;
-      font-weight: 300;
-    }
-    
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 2rem;
-      animation: bounce 2s infinite;
-      cursor: pointer;
-      z-index: 2;
-      transition: var(--transition);
-    }
-    
-    .scroll-down:hover {
-      color: var(--gold);
-      transform: translateX(-50%) scale(1.1);
-    }
-    
-    /* Section Headers */
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 5rem;
-    }
-    
-    .section-header h2 {
-      font-size: 2.6rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-    
-    .section-header h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--secondary), var(--accent));
-      border-radius: 2px;
-    }
-    
-    .section-header p {
-      font-size: 1.2rem;
-    }
-    
-    /* Collaboration Section */
-    .collab-section {
-      padding: 8rem 0;
-      background-color: white;
-      position: relative;
-    }
-    
-    /* Interactive Card */
-    .collab-visual {
-      position: relative;
-      height: 420px;
-      perspective: 1200px;
-    }
-    
-    .interactive-card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: var(--transition);
-      cursor: pointer;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: var(--border-radius-lg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2.5rem;
-      text-align: center;
-      background: white;
-      overflow: hidden;
-    }
-    
-    .card-front {
-      background: linear-gradient(145deg, var(--primary-dark), var(--primary));
-      color: white;
-    }
-    
-    .card-back {
-      background: linear-gradient(145deg, var(--secondary), var(--accent));
-      color: white;
-      transform: rotateY(180deg);
-    }
-    
-    .interactive-card:hover {
-      transform: rotateY(180deg) scale(1.02);
-    }
-    
-    .card-icon {
-      font-size: 4.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--gold);
-      transition: var(--transition);
-    }
-    
-    .interactive-card:hover .card-icon {
-      transform: scale(1.1);
-    }
-    
-    .card-title {
-      font-size: 1.9rem;
-      margin-bottom: 1.2rem;
-    }
-    
-    .card-face p {
-      color: rgba(255,255,255,0.9);
-      font-size: 1.1rem;
-    }
-    
-    /* Research Impact Section */
-    .research-section {
-      padding: 8rem 0;
-      background: linear-gradient(145deg, var(--secondary), var(--primary-dark));
-      color: white;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .research-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
-      opacity: 0.3;
-    }
-    
-    .research-stats {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 4rem;
-    }
-    
-    .stat-item {
-      flex: 1;
-      min-width: 200px;
-      max-width: 250px;
-      padding: 2rem;
-      background: rgba(255,255,255,0.12);
-      border-radius: var(--border-radius);
-      backdrop-filter: blur(8px);
-      transition: var(--transition);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: var(--shadow-sm);
-    }
-    
-    .stat-item:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-    }
-    
-    .stat-number {
-      font-size: 3.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .stat-label {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-    
-/* ============ PARAJES SECTION ============ */
-
-.parajes-section {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Encabezado de sección */
-.section-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  color: #666;
-  font-size: 1.2rem;
-}
-
-/* ============ SEARCH & FILTER ============ */
-
-.search-filter-container {
-  background: white;
-  padding: 2rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow);
-  max-width: 900px;
-  margin: 0 auto 3rem;
-}
-
-.search-box {
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto 2rem;
-}
-
-.search-box i {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--secondary);
-  font-size: 1.2rem;
-  z-index: 2;
-}
-
-#parajeSearch {
-  width: 100%;
-  padding: 0.8rem 1.8rem 0.8rem 55px;
-  border-radius: 50px;
-  border: 2px solid var(--secondary-light);
-  height: 55px;
-  font-size: 1.1rem;
-  background: rgba(52, 152, 219, 0.05);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-
-#parajeSearch:focus {
-  outline: none;
-  border-color: var(--secondary);
-  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
-  background: white;
-}
-
-.filter-btn {
-  border: none;
-  background-color: #e0e0e0;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 0.95rem;
-  margin: 5px;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background-color: #3f51b5;
-  color: white;
-}
-
-/* ============ CARDS DE PARAJES ============ */
-
-.paraje-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.paraje-card:hover {
-  transform: scale(1.02);
-}
-
-.paraje-img {
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  position: relative;
-}
-
-.paraje-overlay {
-  background: rgba(0, 0, 0, 0.45);
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.paraje-overlay i {
-  font-size: 1.2rem;
-}
-
-.paraje-overlay h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.paraje-info {
-  padding: 15px;
-}
-
-.paraje-info p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 12px;
-}
-
-.paraje-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: #3f51b5;
-  color: white;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.paraje-btn:hover {
-  background-color: #303f9f;
-  color: #fff;
-}
-
-/* ============ SIN RESULTADOS ============ */
-
-.no-results {
-  display: none;
-  text-align: center;
-  padding: 40px 10px;
-  color: #999;
-}
-
-.no-results i {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  color: #ccc;
-}
-
-/* ============ RESPONSIVE ============ */
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .search-box {
-    width: 90%;
-  }
-
-  .paraje-img {
-    height: 180px;
-  }
-}
-
-  /* Team Section */
-  /* Team Section */
-.team-section {
-  padding: 4rem 0; /* menos espacio arriba y abajo */
-  background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-  color: white;
-}
-
-.section-header h2 {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
-
-.section-header p {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  opacity: 0.7;
-}
-
-/* Team cards */
-.team-card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border-radius: var(--border-radius);
-  padding: 1rem 1.5rem; /* menos padding */
-  margin-bottom: 1rem; /* menos margen */
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid rgba(255,255,255,0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Imagen */
-.team-img {
-  width: 100px;  /* más chica */
-  height: 100px; /* más chica */
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--gold);
-  margin-bottom: 1rem;
-}
-
-/* Nombre */
-.team-name {
-  font-size: 1.2rem; /* más pequeño */
-  margin-bottom: 0.25rem;
-  color: var(--gold);
-  font-weight: 600;
-}
-
-/* Título */
-.team-title {
-  font-size: 0.9rem; /* más pequeño */
-  margin-bottom: 0.5rem;
-  opacity: 0.8;
-  font-weight: 500;
-}
-
-/* Descripción */
-.team-description, .team-card p:not(.team-title) {
-  font-size: 0.75rem;
-  margin-bottom: 0.5rem;
-  color: white;
-  line-height: 1.3;
-  font-weight: 400;
-  /* max-height: 3.9em; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-}
-
-/* Iconos sociales */
-.team-social {
-  margin-top: auto; /* para que quede abajo */
-}
-
-.team-social a {
-  color: white;
-  font-size: 1.1rem;
-  transition: var(--transition);
-  margin: 0 0.3rem;
-  display: inline-block;
-}
-
-.team-social a:hover {
-  color: var(--gold);
-  transform: translateY(-3px);
-}
-
-/* Hover efecto */
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  background: rgba(255,255,255,0.15);
-}
-
-  
-  /* Publications Section */
-  .publications-section {
-    padding: 8rem 0;
-    background-color: var(--light-gray);
-  }
-  
-  .publication-card {
-    background: rgb(255, 255, 255);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    height: 100%;
-  }
-  
-  .publication-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .publication-img {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .publication-body {
-    padding: 1.5rem;
-  }
-  
-  .publication-date {
-    font-size: 0.9rem;
-    color: var(--dark-gray);
-    margin-bottom: 0.5rem;
-  }
-  
-  .publication-title {
-    font-size: 1.0rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
-  }
-  
-  .publication-desc {
-    font-size: 0.7rem;
-    margin-bottom: 1.5rem;
-  }
-  
- /* Footer */
-footer {
-  background-color: var(--primary-dark);
-  color: rgba(255, 255, 255, 0.75);
-  padding: 3rem 0 2rem;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 0.7rem;
-  line-height: 1.6;
-}
-
-.footer-column h3 {
-  margin-bottom: 1.0rem;
-  position: relative;
-  font-size: 1.0rem;
-  font-weight: 500;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.footer-column h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0.8;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 0.7rem;
-}
-
-.footer-column ul li a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  padding-left: 2px;
-}
-
-.footer-column ul li a:hover {
-  color: var(--gold);
-
-}
-
-.footer-logo {
-  max-width: 180px;
-  margin-bottom: 1.0rem;
-}
-.footer-column h3 {
-  font-size: 0.7rem;
-}
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-right: 0.2rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
-  border-radius: 50%;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.social-links a:hover {
-  background: var(--gold);
-  color: var(--primary-dark);
-  transform: scale(1.05);
-}
-
-.copyright {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.85rem;
-  opacity: 0.7;
-  text-align: center;
-}
-
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 45px;
-  height: 45px;
-  background: var(--gold);
-  color: var(--primary-dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 100;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.back-to-top.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-}
-/* Methodology Section */
-.methodology-section {
-  padding: 6rem 0;
-  background-color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.methodology-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
-  opacity: 0.05;
-}
-
-.methodology-section .section-header {
-  margin-bottom: 3.5rem;
-}
-
-.method-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.method-tabs .nav-item {
-  margin: 0.5rem;
-}
-
-.method-tabs .nav-link {
-  padding: 0.8rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--dark);
-  background: var(--light-gray);
-  border: 2px solid var(--light-gray);
-  transition: var(--transition);
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.method-tabs .nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, var(--secondary), var(--accent));
-  z-index: -1;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.method-tabs .nav-link:hover {
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.method-tabs .nav-link:hover::before {
-  opacity: 1;
-}
-
-.method-tabs .nav-link.active {
-  background: linear-gradient(145deg, var(--secondary), var(--accent));
-  color: white;
-  border-color: transparent;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
-}
-
-.method-tabs .nav-link.active::before {
-  opacity: 1;
-}
-
-.method-content {
-  background: white;
-  padding: 3rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.method-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--secondary), var(--accent));
-  border-radius: 5px 0 0 5px;
-}
-
-.method-content h3 {
-  font-size: 1.8rem;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 0.8rem;
-}
-
-.method-content h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(to right, var(--secondary), var(--accent));
-  border-radius: 2px;
-}
-
-.method-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: var(--dark);
-}
-
-.method-content ul {
-  padding-left: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.method-content li {
-  position: relative;
-  padding-left: 1.8rem;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: var(--dark);
-}
-
-.method-content li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.6rem;
-  width: 10px;
-  height: 10px;
-  background: var(--secondary);
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
-/* Timeline for methodology */
-.method-timeline {
-  margin-top: 3rem;
-  position: relative;
-}
-
-.method-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: linear-gradient(to bottom, var(--secondary-light), var(--accent-light));
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  width: 50%;
-  padding: 0 2rem;
-  box-sizing: border-box;
-}
-
-.timeline-item:nth-child(odd) {
-  left: 0;
-  padding-right: 3rem;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
-  padding-left: 3rem;
-}
-
-.timeline-content {
-  background: linear-gradient(145deg, white, var(--light-gray));
-  padding: 1.8rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  border-left: 4px solid var(--secondary);
-  transition: var(--transition);
-}
-
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 25px;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 4px solid var(--secondary);
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-  right: -12px;
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-  left: -12px;
-}
-
-.timeline-year {
-  font-weight: 700;
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.timeline-content h4 {
-  color: var(--primary);
-  margin-bottom: 0.8rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .method-content {
-    padding: 2rem;
-  }
-  
-  .timeline-item {
-    width: 100%;
-    left: 0 !important;
-    padding-right: 0 !important;
-    padding-left: 2rem !important;
-  }
-  
-  .timeline-content::before {
-    left: -12px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .method-tabs .nav-link {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-  }
-  
-  .method-content {
-    padding: 1.5rem;
-  }
-  
-  .method-timeline::before {
-    left: 15px;
-  }
-  
-  .timeline-item {
-    padding-left: 2.5rem;
-  }
-  
-  .timeline-content::before {
-    left: -12px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .method-tabs {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .method-tabs .nav-link {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .method-content h3 {
-    font-size: 1.6rem;
-  }
-}
-  
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-      }
-      40% {
-        transform: translateY(-20px) translateX(-50%);
-      }
-      60% {
-        transform: translateY(-10px) translateX(-50%);
-      }
-    }
-    
-    /* Scroll reveal effect */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-    
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 1200px) {
-      .hero h1 {
-        font-size: 3.2rem;
-      }
-      
-      .section-header h2 {
-        font-size: 2.4rem;
-      }
-    }
-    
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      
-      .hero p {
-        font-size: 1.0rem;
-      }
-      
-      .section-header h2 {
-        font-size: 2.2rem;
-      }
-      
-      .collab-visual {
-        height: 350px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 600px;
-      }
-      
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      
-      .hero p {
-        font-size: 1.2rem;
-      }
-      
-      .section-header h2 {
-        font-size: 2rem;
-      }
-      
-      .research-stats {
-        gap: 1.5rem;
-      }
-      
-      .stat-item {
-        min-width: 160px;
-        padding: 1.5rem;
-      }
-      
-      .stat-number {
-        font-size: 2.8rem;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .section-header h2 {
-        font-size: 1.8rem;
-      }
-      
-      .stat-item {
-        min-width: 100%;
-        max-width: 100%;
-      }
-      
-      .filter-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-      }
-      
-      .search-box {
-        margin-bottom: 2rem;
-      }
-      
-      #parajeSearch {
-        height: 45px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
   <!-- Hero Section -->
@@ -1188,7 +26,7 @@ footer {
       <h1 class="mb-4">Explorando las Ciencias Sociales y Humanidades a través del Turismo</h1>
       <p class="mb-5">Un proyecto interdisciplinario que combina el análisis social con la experiencia turística para crear conocimiento transformador</p>
     </div>
-    <div class="scroll-down" onclick="scrollToContent()">
+    <div class="scroll-down" id="scrollDown">
       <i class="fas fa-chevron-down"></i>
     </div>
   </section>
@@ -1224,31 +62,40 @@ footer {
   </section>
   
   <!-- Research Impact Section -->
-  <section class="research-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="text-white">Investigación Rigurosa, Impacto Real</h2>
-        <p class="text-white-50">Un trabajo de campo exhaustivo que documenta la riqueza cultural y natural de Río Negro</p>
+<section class="research-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="text-white">Investigación Rigurosa, Impacto Real</h2>
+      <p class="text-white-50">Un trabajo de campo exhaustivo que documenta la riqueza cultural y natural de Río Negro</p>
+    </div>
+    
+    <div class="research-stats reveal">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Horas de investigación</div>
       </div>
-      
-      <div class="research-stats reveal">
-        <div class="stat-item">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Horas de investigación</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">26</div>
-          <div class="stat-label">Parajes documentados</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">300+</div>
-          <div class="stat-label">Estudiantes involucrados</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">40+</div>
-          <div class="stat-label">Docentes en territorio</div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-number">26</div>
+        <div class="stat-label">Parajes documentados</div>
       </div>
+      <div class="stat-item">
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Estudiantes involucrados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Docentes en territorio</div>
+      </div>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto text-center reveal">
+        <p class="lead">Este proyecto representa el esfuerzo conjunto de estudiantes y docentes de la ESRN Rural Virtual, quienes han trabajado intensamente para documentar de primera mano la diversidad cultural y geográfica de la provincia de Río Negro.</p>
+        <p>Desde la costa atlántica hasta la cordillera, cada paraje ha sido estudiado con rigor académico y sensibilidad humana, creando un registro invaluable de nuestro patrimonio.</p>
+      </div>
+    </div>
+  </div>
+</section>
       
       <div class="row mt-5">
         <div class="col-lg-8 mx-auto text-center reveal">
@@ -1258,7 +105,6 @@ footer {
       </div>
     </div>
   </section>
-  
   
   <!-- Parajes Section -->
   <section class="parajes-section">
@@ -1281,11 +127,11 @@ footer {
         <button class="filter-btn" data-filter="valle">Valle</button>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4" id="parajes-container">
         <!-- Paraje 1: Aguada Cecilio -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="aguada cecilio comunidad rural tradición ganadera paisajes serranos">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('acecilchicos.jpg');">
+            <div class="paraje-img" style="background-color: #3498db;">
               <div class="paraje-overlay">
                 <i class="fas fa-tree"></i>
                 <h3>Aguada Cecilio</h3>
@@ -1301,7 +147,7 @@ footer {
         <!-- Paraje 2: Aguada Guzmán -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="aguada guzmán oasis meseta reservas naturales cultura local">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('Aguada%20Guzm%C3%A1n.jpg');">
+            <div class="paraje-img" style="background-color: #2ecc71;">
               <div class="paraje-overlay">
                 <i class="fas fa-water"></i>
                 <h3>Aguada Guzmán</h3>
@@ -1317,7 +163,7 @@ footer {
         <!-- Paraje 3: Aguada de Guerra -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="aguada de guerra paraje cordillerano historia mapuche paisajes imponentes">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('aguechi.jpg');">
+            <div class="paraje-img" style="background-color: #e74c3c;">
               <div class="paraje-overlay">
                 <i class="fas fa-mountain"></i>
                 <h3>Aguada de Guerra</h3>
@@ -1333,7 +179,7 @@ footer {
         <!-- Paraje 4: Rincón Treneta -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="rincón treneta localidad rural población ganadería">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('TRENETA2.png');">
+            <div class="paraje-img" style="background-color: #9b59b6;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Rincón Treneta</h3>
@@ -1346,10 +192,10 @@ footer {
           </div>
         </div>
        
-        <!-- Paraje 5: Comicó -->
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="comicó comunidad rural ganadería ovina cabrina">
+        <!-- Paraje 5: Chelforó -->
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="chelforó comunidad rural valle medio">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('chelestu.png');">
+            <div class="paraje-img" style="background-color: #f1c40f;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Chelforó</h3>
@@ -1365,7 +211,7 @@ footer {
         <!-- Paraje 6: Comicó -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="comicó comunidad rural ganadería ovina cabrina">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('comigif.gif');">
+            <div class="paraje-img" style="background-color: #1abc9c;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Comicó</h3>
@@ -1381,7 +227,7 @@ footer {
         <!-- Paraje 7: Yaminué -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="yaminué paraje rural ganadería extensiva">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('yaminue.png');">
+            <div class="paraje-img" style="background-color: #d35400;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Yaminué</h3>
@@ -1397,14 +243,14 @@ footer {
         <!-- Paraje 8: Cerro Policía -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="cerro policía localidad rural ganadería ovina cabrina">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('cerrochicos.jpg');">
+            <div class="paraje-img" style="background-color: #34495e;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Cerro Policía</h3>
               </div>
             </div>
             <div class="paraje-info">
-              <p>Localidad rural con una población de 275 habitantes, dedicada a la ganadería ovina y caprina.</p>
+              <p>Localidad rural con una población of 275 habitantes, dedicada a la ganadería ovina y caprina.</p>
               <a href="Cerro.html" class="paraje-btn">Explorar <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
@@ -1413,7 +259,7 @@ footer {
         <!-- Paraje 9: Mencué -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="mencué localidad rural ganadería ganadería">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('MENCUECHI.webp');">
+            <div class="paraje-img" style="background-color: #7f8c8d;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Mencué</h3>
@@ -1429,7 +275,7 @@ footer {
         <!-- Paraje 10: Corralito -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="corralito comunidad rural ganadería ovina cabrina">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('CORRALITO.JPG');">
+            <div class="paraje-img" style="background-color: #16a085;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Corralito</h3>
@@ -1445,7 +291,7 @@ footer {
         <!-- Paraje 11: Naupahuen -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="valle" data-search="naupahuen paraje rural región sur ganadería tradicional">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('naupa1.jpg');">
+            <div class="paraje-img" style="background-color: #27ae60;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Naupahuen</h3>
@@ -1461,7 +307,7 @@ footer {
         <!-- Paraje 12: Río Chico -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="valle" data-search="río chico localidad tradición rural vida comunitaria ganadera">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('vivia.jpg');">
+            <div class="paraje-img" style="background-color: #2980b9;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Río Chico</h3>
@@ -1477,7 +323,7 @@ footer {
         <!-- Paraje 13: Mamuel Choique -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="mamuel choique comunidad tradición mapuche ganadería">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('choiquechi.jpeg');">
+            <div class="paraje-img" style="background-color: #8e44ad;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Mamuel Choique</h3>
@@ -1493,7 +339,7 @@ footer {
         <!-- Paraje 14: Sierra Pailemán -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="sierra pailemán estepa patagónica paisajes vida rural">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('Sierra%20Pailem%C3%A1n.jpg');">
+            <div class="paraje-img" style="background-color: #f39c12;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Sierra Pailemán</h3>
@@ -1509,7 +355,7 @@ footer {
         <!-- Paraje 15: Arroyo Los Berros -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="arroyo los berros localidad rural identidad patagónica comunidad">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('berros.jpg');">
+            <div class="paraje-img" style="background-color: #c0392b;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Arroyo Los Berros</h3>
@@ -1525,7 +371,7 @@ footer {
         <!-- Paraje 16: Peñas Blancas -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="valle" data-search="peñas blancas paraje rural formaciones rocosas sur rionegrino">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('peñasBlancas.png');">
+            <div class="paraje-img" style="background-color: #2c3e50;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Peñas Blancas</h3>
@@ -1539,9 +385,9 @@ footer {
         </div>
 
         <!-- Paraje 17: Laguna Blanca -->
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="laguna blanca localidad rural importancia ecológica aves migratorias">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="laguna blanca localidad rural importancia ecológica aves migratoria">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('Laguna\ Blancachicos.png');">
+            <div class="paraje-img" style="background-color: #3498db;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Laguna Blanca</h3>
@@ -1557,7 +403,7 @@ footer {
         <!-- Paraje 18: Conaniyeu -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="conaniyeu comunidad rural línea sur historia ferroviaria vida ganadera">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('cona.jpg');">
+            <div class="paraje-img" style="background-color: #e67e22;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Conaniyeu</h3>
@@ -1573,7 +419,7 @@ footer {
         <!-- Paraje 19: El Caín -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="el caín localidad rural tradición mapuche estepa cultura ancestral">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('elCaín.png');">
+            <div class="paraje-img" style="background-color: #9b59b6;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>El Caín</h3>
@@ -1589,7 +435,7 @@ footer {
         <!-- Paraje 20: Lago Pellegrini -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="valle" data-search="lago pellegrini paraje turístico pesquero actividades recreativas">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('Lago\ Pellegrinichicos.png');">
+            <div class="paraje-img" style="background-color: #16a085;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Lago Pellegrini</h3>
@@ -1605,7 +451,7 @@ footer {
         <!-- Paraje 21: Villa Llanquín -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="montaña" data-search="villa llanquín río limay comunidad encanto natural conexión fluvial">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('Villa\ LLanquínchicos.jpg');">
+            <div class="paraje-img" style="background-color: #27ae60;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Villa Llanquín</h3>
@@ -1621,7 +467,7 @@ footer {
         <!-- Paraje 22: El Manso -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="montaña" data-search="el manso región agrícola potencial turístico montañas ríos cristalinos">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('mansochi.jpg');">
+            <div class="paraje-img" style="background-color: #2980b9;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>El Manso</h3>
@@ -1637,7 +483,7 @@ footer {
         <!-- Paraje 23: El Cóndor -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="costa" data-search="el cóndor balneario atlántico valor ecológico loros barranqueros">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('condorchicos.jpg');">
+            <div class="paraje-img" style="background-color: #2c3e50;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>El Cóndor</h3>
@@ -1653,7 +499,7 @@ footer {
         <!-- Paraje 24: Valle Verde -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="valle" data-search="valle verde oasis agrícola estepa producción frutas hortalizas">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('verde.webp');">
+            <div class="paraje-img" style="background-color: #f1c40f;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Valle Verde</h3>
@@ -1669,7 +515,7 @@ footer {
         <!-- Paraje 25: Colán Conhué -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="colán conhué paraje estepa patagónica comunidades mapuches">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('colanchi.png');">
+            <div class="paraje-img" style="background-color: #e74c3c;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Colán Conhué</h3>
@@ -1682,10 +528,10 @@ footer {
           </div>
         </div>
 
-              <!-- Paraje 27: Blancura Centro -->
+        <!-- Paraje 27: Blancura Centro -->
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" data-category="meseta" data-search="blancura centro localidad rural meseta patagónica tranquilidad">
           <div class="paraje-card">
-            <div class="paraje-img" style="background-image: url('blancura.png');">
+            <div class="paraje-img" style="background-color: #7f8c8d;">
               <div class="paraje-overlay">
                 <i class="fas fa-home"></i>
                 <h3>Blancura Centro</h3>
@@ -1711,14 +557,14 @@ footer {
   <!-- Methodology Section -->
   <section class="methodology-section" id="metodologia">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header">
         <h2>Metodología de Investigación</h2>
         <p>Un enfoque riguroso que combina técnicas cualitativas y participativas</p>
       </div>
       
       <div class="row">
         <div class="col-lg-12">
-          <ul class="nav nav-pills method-tabs justify-content-center" id="methodTab" role="tablist" data-aos="fade-up">
+          <ul class="nav nav-pills method-tabs justify-content-center" id="methodTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="etnografia-tab" data-bs-toggle="pill" data-bs-target="#etnografia" type="button">Etnografía</button>
             </li>
@@ -1733,17 +579,10 @@ footer {
             </li>
           </ul>
           
-          <div class="tab-content method-content" id="methodTabContent" data-aos="fade-up" data-aos-delay="200">
+          <div class="tab-content method-content" id="methodTabContent">
             <div class="tab-pane fade show active" id="etnografia" role="tabpanel">
               <h3>Etnografía Aplicada</h3>
               <p>Realizamos trabajo de campo prolongado mediante observación participante y entrevistas en profundidad para comprender las prácticas culturales, relaciones sociales y sistemas de significado de las comunidades estudiadas.</p>
-              <p><strong>Técnicas empleadas:</strong></p>
-              <ul>
-                <li>Observación participante con trabajos de campo detallados</li>
-                <li>Entrevistas etnográficas semiestructuradas</li>
-                <li>Registro audiovisual de prácticas culturales</li>
-                <li>Talleres participativos de validación</li>
-              </ul>
             </div>
             
             <div class="tab-pane fade" id="historia" role="tabpanel">
@@ -1769,16 +608,18 @@ footer {
   <!-- Team Section -->
   <section class="team-section" id="equipo">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header">
         <h2 class="text-white">Nuestro Equipo</h2>
         <p class="text-white-50">Profesionales comprometidos con la investigación interdisciplinaria y el desarrollo territorial</p>
       </div>
       
       <div class="row">
         <!-- Coordinación -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="vivi.jpg" class="team-img" alt="Viviana Huentemil">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Viviana Huentemil</h3>
             <p class="team-title">Coordinación General </p>
             <p class="team-description">Profesora nivel secundario en Biología</p>
@@ -1789,36 +630,40 @@ footer {
         </div>
         
         <!-- Subcoordinación -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="sasha.enc" class="team-img" alt="Sasha Erguía">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Sasha Eguía</h3>
             <p class="team-title">Subcoordinación.</p>
             <p class="team-description">Profesora de nivel medio y superior en Química</p>
             <div class="team-social">
-             
               <a href="mailto:tuemail@esrnruralvirtual.com"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
         </div>
         
         <!-- Ciencias Sociales -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="jr.png" class="team-img" alt="Javier Reca">  
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Javier Reca</h3>
             <p class="team-title">Ciencias Sociales</p>
-        <p class="team-description">Magister especializado en estudios políticos, Profesor en Historia</p>
-
+            <p class="team-description">Magister especializado en estudios políticos, Profesor en Historia</p>
             <div class="team-social">
               <a href="mailto:sociales1cb@esrnruralvirtual.com"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="chaco.jpg" class="team-img" alt="Sergio Gimenez">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Sergio Gimenez</h3>
             <p class="team-title">Ciencias Sociales</p>
             <p>Profesor en Geografía, Especialista en Educación y TIC, Diplomado en Problemáticas Ambientales.</p>
@@ -1828,9 +673,11 @@ footer {
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="cb.jpg" class="team-img" alt="Claudio Becker">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Claudio Becker</h3>
             <p class="team-title">Ciencias Sociales</p>
             <p>Profesor en Historia</p>
@@ -1840,9 +687,11 @@ footer {
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="yo.jpg" class="team-img" alt="María Laura Yunes">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">María Laura Yunes</h3>
             <p class="team-title">Ciencias Sociales</p>
             <p>Licenciada en Educación con orientación en TIC. Especialista en Ciencias Sociales y su enseñanza, Políticas Socioeducativas y,  Educación y TIC. Profesora de nivel primario y secundario. Técnica en desarrollo y promoción sociocultural y comunitaria. Desarrolladora y programadora.</p>
@@ -1852,9 +701,11 @@ footer {
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="sabi.jpg" class="team-img" alt="Sabina Rada">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Sabina Rada</h3>
             <p class="team-title">Turismo</p>
             <p>Profesora de grado universitario en turismo. Licenciada en Turismo.Guía de turismo y técnica universitaria en emprendimientos turísticos</p>
@@ -1864,12 +715,14 @@ footer {
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="team-card text-center">
-            <img src="alej.jpg" class="team-img" alt="Alejandra Kostas">
+            <div class="team-img-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
             <h3 class="team-name">Virginia A. Kosta</h3>
             <p class="team-title">Turismo</p>
-            <p> Guía Universitaria de Turismo. Licenciada en Hotelería y Turismo. Profesora para la Educación Secundaria en Hotelería y Turismo
+            <p> Guía Universitaria de Turismo. Licenciada en Hotelería y Turismo. Profesora para la Educación Secundaria en Hotelería and Turismo
 Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p>
             <div class="team-social">
               <a href="mailto:tuemail@ejemplo.com"><i class="fas fa-envelope"></i></a>
@@ -1883,29 +736,33 @@ Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p
   <!-- Publications Section -->
   <section class="publications-section" id="publicaciones">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header">
         <h2>Producción Académica</h2>
         <p>Publicaciones y materiales derivados de nuestra investigación</p>
       </div>
       
       <div class="row g-4">
         <!-- Publicación 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6">
           <div class="publication-card">
-            <div class="publication-img" style="background-image: url('bandera.png');"></div>
+            <div class="publication-img" style="background-color: #3498db;">
+              <i class="fas fa-book"></i>
+            </div>
             <div class="publication-body">
               <p class="publication-date">Bandera Comunal</p>
               <h3 class="publication-title">Memorias de la Meseta: Etnografía de las comunidades rurales de Río Negro</h3>
-              <p class="publication-desc">Compilación de relatos y análisis antropológico de las prácticas culturales rionegrinas.</p>
+              <p class="publication-desc">Compilación de relatos and análisis antropológico de las prácticas culturales rionegrinas.</p>
               <a href="https://sites.google.com/esrnruralvirtual.com/bandera-comunal/inicio?pli=1" class="paraje-btn" target="_blank">Ver publicación <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
         </div>
         
         <!-- Publicación 2 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6">
           <div class="publication-card">
-            <div class="publication-img" style="background-image: url('revista.png');"></div>
+            <div class="publication-img" style="background-color: #2ecc71;">
+              <i class="fas fa-file-pdf"></i>
+            </div>
             <div class="publication-body">
               <h3 class="publication-title">Guía de Recursos Turísticos Culturales de Río Negro</h3>
               <p class="publication-desc">Inventario comentado de sitios con potencial turístico basado en patrimonio cultural.</p>
@@ -1915,9 +772,11 @@ Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p
         </div>
         
         <!-- Publicación 3 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="publication-card">
-            <div class="publication-img" style="background-image: url('feria.png');"></div>
+            <div class="publication-img" style="background-color: #e74c3c;">
+              <i class="fas fa-film"></i>
+            </div>
             <div class="publication-body">
               <h3 class="publication-title">Documental: "Voces del Viento"</h3>
               <p class="publication-desc">Testimonios de habitantes de parajes rurales de la provincia.</p>
@@ -1928,7 +787,7 @@ Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p
       </div>
       
       <!-- Botón final con enlace a la enciclopedia -->
-      <div class="text-center mt-5" data-aos="fade-up">
+      <div class="text-center mt-5">
         <a href="https://sites.google.com/view/la-enciclopeia-del-rural/p%C3%A1gina-principal" class="btn btn-outline-primary" target="_blank">Ver todas las publicaciones</a>
       </div>
     </div>
@@ -1940,18 +799,12 @@ Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
           <div class="footer-column">
-          <img 
-  src="logoAnimado.gif" 
-  alt="Atlas Cultural de Río Negro" 
-  style="width: 130px; height: 130px; border-radius: 15px; display: block; margin: 0 auto; transform: translateX(-10%);" 
-  class="footer-logo">
-
-
-          <p style="font-size: 0.7rem;">
-  Proyecto interdisciplinario que documenta y analiza la diversidad cultural de Río Negro mediante la convergencia entre ciencias sociales y turismo sostenible.
-</p>
-
-            
+            <div class="footer-logo-placeholder">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <p style="font-size: 0.7rem;">
+              Proyecto interdisciplinario que documenta y analiza la diversidad cultural de Río Negro mediante la convergencia entre ciencias sociales y turismo sostenible.
+            </p>
           </div>
         </div>
         
@@ -1964,183 +817,55 @@ Especialista en Educación y Tecnologías Digitales para el Nivel Secundario.</p
               <li><i class="fas fa-envelope me-2"></i> coordinacionrural2022@esrnruralvirtual.com</li>
             </ul>
             
-       <h3 class="mt-4" style="font-size: 0.7rem;">Enlaces Rápidos</h3>
-<ul>
-  <li><a href="#metodologia">Sobre la metodoligía en el Proyecto</a></li>
-  <li><a href="#parajes">Explorar Parajes</a></li>
-  <li><a href="#publicaciones">Publicaciones</a></li>
-  <li><a href="#equipo">Equipo</a></li>
-</ul>
-</div>
-</div>
+            <h3 class="mt-4" style="font-size: 0.7rem;">Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="#metodologia">Sobre la metodología en el Proyecto</a></li>
+              <li><a href="#parajes">Explorar Parajes</a></li>
+              <li><a href="#publicaciones">Publicaciones</a></li>
+              <li><a href="#equipo">Equipo</a></li>
+            </ul>
+          </div>
+        </div>
 
-<div class="col-lg-4 col-md-6">
-  <div class="footer-column">
-    <h3 style="font-size: 0.7rem;">Instituciones Participantes</h3>
-    <ul>
-      <li>ESRN Rural Virtual</li>
-    </ul>
-    
-    <h3 class="mt-4" style="font-size: 0.7rem;">Financiamiento</h3>
-    <p style="font-size: 0.7rem;">
-  Este proyecto se llevó adelante sin financiamiento institucional, gracias a la participación activa de estudiantes y docentes de toda la provincia, y al valioso acompañamiento del equipo de conducción. El diseño y desarrollo fueron realizados de forma voluntaria por su desarrolladora.
-</p>
-  </div>
-</div>
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-column">
+            <h3 style="font-size: 0.7rem;">Instituciones Participantes</h3>
+            <ul>
+              <li>ESRN Rural Virtual</li>
+            </ul>
+            
+            <h3 class="mt-4" style="font-size: 0.7rem;">Financiamiento</h3>
+            <p style="font-size: 0.7rem;">
+              Este proyecto se llevó adelante sin financiamiento institucional, gracias a la participación activa de estudiantes y docentes de toda la provincia, y al valioso acompañamiento del equipo de conducción. El diseño y desarrollo fueron realizados de forma voluntaria por su desarrolladora.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div class="text-center copyright">
         <p>© 2025 Wikiparajes. Todos los derechos reservados.</p>
-         <div class="dev-social">
-  <a href="https://github.com/mlygit" target="_blank" title="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/maría-laura-yunes-5bba0249" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-  <a href="mailto:marialaurayunes@gmail.com" title="Enviar correo">
-    <i class="fas fa-envelope"></i>
-  </a>
-</div>
+        <div class="dev-social">
+          <a href="https://github.com/mlygit" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/maría-laura-yunes-5bba0249" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:marialaurayunes@gmail.com" title="Enviar correo">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
 
         <p class="mb-0">Diseño y desarrollo: <a href="#" style="color: var(--gold);">María Laura Yunes</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle with Popper -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    // Efecto de partículas
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
-        }
-      }
-    });
-    
-    // Scroll suave
-    function scrollToContent() {
-      document.querySelector('.collab-section').scrollIntoView({ 
-        behavior: 'smooth' 
-      });
-    }
-    
-    // Efecto de revelación al hacer scroll
-    function revealOnScroll() {
-      const reveals = document.querySelectorAll('.reveal');
-      const windowHeight = window.innerHeight;
-      const revealPoint = 150;
-      
-      reveals.forEach(reveal => {
-        const revealTop = reveal.getBoundingClientRect().top;
-        if (revealTop < windowHeight - revealPoint) {
-          reveal.classList.add('active');
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    // Filtrado de parajes
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const parajeCards = document.querySelectorAll('[data-category]');
-      
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          // Remover clase active de todos los botones
-          filterBtns.forEach(b => b.classList.remove('active'));
-          // Añadir clase active al botón clickeado
-          this.classList.add('active');
-          
-          const filter = this.getAttribute('data-filter');
-          
-          parajeCards.forEach(card => {
-            const cardWrapper = card.closest('.col-xl-3');
-            if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
-              cardWrapper.style.display = 'block';
-            } else {
-              cardWrapper.style.display = 'none';
-            }
-          });
-          
-          // Actualizar búsqueda si hay texto en el buscador
-          const searchTerm = document.getElementById('parajeSearch').value;
-          if (searchTerm.length > 0) {
-            searchParajes();
-          }
-        });
-      });
-    });
-
-    // Función para normalizar texto (quitar acentos y convertir a minúsculas)
-    function normalizeText(text) {
-      return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    }
-
-    // Buscador de parajes
-    function searchParajes() {
-      const searchTerm = normalizeText(document.getElementById('parajeSearch').value);
-      const parajeCards = document.querySelectorAll('[data-category]');
-      const noResults = document.getElementById('noResults');
-      let hasResults = false;
-      const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-
-      parajeCards.forEach(card => {
-        const cardWrapper = card.closest('.col-xl-3');
-        const searchData = normalizeText(card.getAttribute('data-search'));
-        const cardTitle = normalizeText(card.querySelector('h3').textContent);
-        const category = card.getAttribute('data-category');
-        
-        // Busca tanto en el data-search como en el título del paraje
-        const matchesSearch = searchTerm.length === 0 || 
-                             searchData.includes(searchTerm) || 
-                             cardTitle.includes(searchTerm);
-        const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
-        
-        if (matchesSearch && matchesFilter) {
-          cardWrapper.style.display = 'block';
-          hasResults = true;
-        } else {
-          cardWrapper.style.display = 'none';
-        }
-      });
-
-      // Mostrar u ocultar mensaje de no resultados
-      if (!hasResults && (searchTerm.length > 0 || activeFilter !== 'all')) {
-        noResults.style.display = 'block';
-      } else {
-        noResults.style.display = 'none';
-      }
-    }
-
-    // Event listener para el buscador
-    document.getElementById('parajeSearch').addEventListener('input', searchParajes);
-
-    // También aplicar búsqueda al cambiar filtros
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const searchTerm = document.getElementById('parajeSearch').value;
-        if (searchTerm.length > 0) {
-          searchParajes();
-        }
-      });
-    });
-  </script>
+  <!-- Custom JavaScript -->
+  <script src="index.js"></script>
 </body>
 </html>
