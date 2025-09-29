@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="CSS/styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -375,55 +375,6 @@
   <button onclick="window.location.href='index.html'" class="volver-btn">
     <i class="fas fa-home"></i> Volver al Inicio
   </button>
-
-  <script>
-    // Text-to-speech
-    let isListening = false;
-    let speechSynthesis = window.speechSynthesis;
-    let utterance;
-    
-    function toggleListen() {
-      const btn = document.getElementById("listen-btn");
-      const mainContent = document.querySelector('.container');
-      const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
-
-      if (!isListening) {
-        // Detener cualquier reproducción previa
-        speechSynthesis.cancel();
-        
-        utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'es-AR';
-        utterance.rate = 0.9;
-        utterance.pitch = 1;
-        
-        // Evento cuando termina la reproducción
-        utterance.onend = () => {
-          isListening = false;
-          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
-        };
-        
-        // Iniciar reproducción
-        speechSynthesis.speak(utterance);
-        isListening = true;
-        btn.innerHTML = '<i class="fas fa-stop"></i> Detener';
-      } else {
-        speechSynthesis.cancel();
-        isListening = false;
-        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
-      }
-    }
-
-    function pauseSpeech() {
-      if (speechSynthesis.speaking && !speechSynthesis.paused) {
-        speechSynthesis.pause();
-      }
-    }
-
-    function resumeSpeech() {
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume();
-      }
-    }
-  </script>
+  <script src="scriptprueba.js"></script>
 </body>
 </html>

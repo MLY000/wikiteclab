@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="CSS/styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -329,112 +329,6 @@
 <button onclick="window.location.href='index.html'" class="volver-btn">
   <i class="fas fa-home"></i> Volver al Inicio
 </button>
-
-<style>
-  /* Estilos para el botón */
-  .volver-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2c5282;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin: 10px;
-  }
-  
-  .volver-btn:hover {
-    background-color: #1a365d;
-  }
-  
-  .volver-btn i {
-    margin-right: 8px;
-  }
-</style>
-  <script>
-    // Modo oscuro/claro
-    function toggleModo() {
-      document.body.classList.toggle("dark-mode");
-      const btn = document.querySelector('.modo-btn');
-      if (document.body.classList.contains("dark-mode")) {
-        btn.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
-      } else {
-        btn.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
-      }
-    }
-
-    // Text-to-speech mejorado
-    let isListening = false;
-    let speechSynthesis = window.speechSynthesis;
-    let utterance;
-    
-    function toggleListen() {
-      const btn = document.getElementById("listen-btn");
-      
-      if (!isListening) {
-        // Detener cualquier reproducción previa
-        speechSynthesis.cancel();
-        
-        // Obtener todo el texto de la página
-        const mainContent = document.querySelector('.container');
-        const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
-        
-        // Crear nueva utterance
-        utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'es-AR';
-        utterance.rate = 0.9;
-        utterance.pitch = 1;
-        
-        // Evento cuando termina la reproducción
-        utterance.onend = () => {
-          isListening = false;
-          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
-        };
-        
-        // Evento si hay error
-        utterance.onerror = (event) => {
-          console.error('Error en speechSynthesis:', event);
-          isListening = false;
-          btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
-          alert('Error al intentar leer el texto. Por favor intente nuevamente.');
-        };
-        
-        // Iniciar reproducción
-        speechSynthesis.speak(utterance);
-        isListening = true;
-        btn.innerHTML = '<i class="fas fa-stop"></i> Detener';
-      } else {
-        speechSynthesis.cancel();
-        isListening = false;
-        btn.innerHTML = '<i class="fas fa-volume-up"></i> Escuchar Texto';
-      }
-    }
-    
-    function pauseSpeech() {
-      if (speechSynthesis.speaking && !speechSynthesis.paused) {
-        speechSynthesis.pause();
-      }
-    }
-    
-    function resumeSpeech() {
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume();
-      }
-    }
-
-    // Función para obtener datos del clima (simulada)
-    function getWeather() {
-      // En una implementación real, aquí se haría una llamada a una API de clima
-      document.getElementById('weather-icon-colan').src = 'https://openweathermap.org/img/wn/01d@2x.png';
-      document.querySelector('#weather-icon-colan + div > div').textContent = '18°C';
-      document.getElementById('humidity-colan').textContent = '35%';
-      document.getElementById('wind-colan').textContent = '30 km/h';
-    }
-
-    // Llamar a la función del clima cuando la página cargue
-    window.addEventListener('load', getWeather);
-  </script>
+  <script src="scriptprueba.js"></script>
 </body>
 </html>

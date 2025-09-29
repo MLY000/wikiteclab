@@ -9,15 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  
 </head>
 <body>
-  
-
   <header>
     <h1>Aguada Cecilio</h1>
     <p>Un paraje histórico nacido con el ferrocarril en la provincia de Río Negro</p>
@@ -86,8 +82,6 @@
         <div class="location-header">
           <h3>Aguada Cecilio, Río Negro</h3>
         </div>
-
-  
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12100.456789012345!2d-67.233333!3d-39.033333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95fa0b8a7f3d3d3d%3A0x6d9e5a9c1a1f3b1a!2sAguada%20Cecilio%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar"
@@ -206,7 +200,6 @@
           <img src="acecerritoama.png" alt="Cerrito Amarillo">
           <div class="img-caption">El famoso Cerrito Amarillo, protagonista de leyendas</div>
         </div>
-      
       </div>
     </section>
 
@@ -223,7 +216,6 @@
       </ul>
       <div class="img-container">
         <div class="img-card">
-   
           <img src="acectren.png" alt="Antigua estación ferroviaria">
           <div class="img-caption">Vestigios de la estación de tren (1910)</div>
         </div>
@@ -267,16 +259,15 @@
       <p>Evidencia de que la zona estuvo cubierta por el mar en eras geológicas pasadas.</p>
     </section>
 
-   
     <div class="audio-controls" id="tts-controls">
-      <button onclick="toggleListen()" class="audio-button" id="listen-btn">
+      <button id="listen-btn" class="audio-button">
         <i class="fas fa-volume-up"></i> Escuchar Texto
       </button>
       <div style="display: flex; gap: 1rem;">
-        <button onclick="pauseSpeech()" class="audio-button">
+        <button id="pause-btn" class="audio-button">
           <i class="fas fa-pause"></i> Pausar
         </button>
-        <button onclick="resumeSpeech()" class="audio-button">
+        <button id="resume-btn" class="audio-button">
           <i class="fas fa-play"></i> Reanudar
         </button>
       </div>
@@ -289,15 +280,14 @@
       <p>Proyecto educativo de la ESRN Rural Virtual</p>
       <p>Área de Ciencias Sociales y Humanidades</p>
       
-    
-      
       <p style="margin-top: 2rem; font-size: 0.7rem;">&copy; 2025 - Todos los derechos reservados. Prof. y Lic. María Laura Yunes – Especialista en TIC y Desarrolladora Web.</p>
     </div>
   </footer>
-<!-- Coloca este botón donde prefieras en tu página, por ejemplo al inicio o al final -->
-<button onclick="window.location.href='index.html'" class="volver-btn">
-  <i class="fas fa-home"></i> Volver al Inicio
-</button>
+
+  <button id="volver-btn" class="volver-btn">
+    <i class="fas fa-home"></i> Volver al Inicio
+  </button>
+
   <script src="scriptprueba.js"></script>
 </body>
 </html>
